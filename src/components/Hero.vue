@@ -1,49 +1,106 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <div id="Hero" class="bg-white dark:bg-slate-950">
-    <div class="mx-auto mt-[6.5rem] max-w-6xl py-6 sm:px-6 sm:py-1 lg:px-8">
-      <div class="relative isolate overflow-hidden max-h-[40] max-lg:[40rem] max-sm:[20rem] bg-sky-500 dark:bg-sky-700 px-6 pt-16 hover:shadow-2xl rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 hover:scale-102 transition duration-500 flex flex-col-reverse lg:flex-row">
-        <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[30rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
-          <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
-          <defs>
-            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-              <stop stop-color="#7775D6" />
-              <stop offset="1" stop-color="#ffffff" stop-opacity="0.5" />
-            </radialGradient>
-          </defs>
-        </svg>
-        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:flex-auto lg:py-12 lg:text-left">
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            A Junior Web Front End Developer
-          </h2>
-          <h2 class="text-3xl font-light tracking-tight text-white sm:text-4xl mt-3">
-            Make a Better Visual For a Better Website
-          </h2>
-          <div class="mt-10 mb-10 flex items-center justify-center gap-x-6 lg:justify-start">
-            <a href="https://www.linkedin.com/in/muhammad-hafidz-amanullah-abyan-4a8b191ab/" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-sky-500 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Connect With Me!</a>
+  <section id="Hero" class="bg-white dark:bg-slate-950">
+    <div class="mx-auto mt-[6.5rem] max-w-6xl px-6 py-10 sm:px-8 lg:px-8">
+      <div
+        class="relative isolate overflow-hidden rounded-3xl bg-white px-6 py-12 shadow-xl ring-1 ring-slate-200 transition duration-500 hover:-translate-y-1 hover:shadow-2xl dark:bg-slate-900 dark:ring-slate-800 sm:px-12 lg:flex lg:items-center lg:gap-x-16 lg:px-16 lg:py-16"
+      >
+        <!-- Decorative line -->
+        <div
+          class="absolute left-8 top-8 h-1.5 w-16 rounded-full bg-sky-500 sm:left-12 lg:left-16"
+        ></div>
+
+        <!-- Decorative dots -->
+        <div
+          class="absolute right-12 top-12 hidden h-36 w-36 opacity-30 lg:block"
+          aria-hidden="true"
+        >
+          <div class="grid grid-cols-6 gap-4">
+            <span
+              v-for="item in 36"
+              :key="item"
+              class="h-1.5 w-1.5 rounded-full bg-sky-500"
+            ></span>
           </div>
         </div>
-        <div class="relative sm:my-auto h-auto lg:ml-20 flex justify-center items-center lg:flex lg:items-center">
-          <img class="relative mx-auto max-w-full p-10 object-contain sm:max-w-auto " src="/src/assets/CTO.png" alt="Abyantch" />
+        <div
+          class="absolute left-12 bottom-2 hidden h-36 w-36 opacity-30 lg:block"
+          aria-hidden="true"
+        >
+          <div class="grid grid-cols-6 gap-4">
+            <span
+              v-for="item in 36"
+              :key="item"
+              class="h-1.5 w-1.5 rounded-full bg-sky-500"
+            ></span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div
+          class="relative z-10 mx-auto max-w-xl text-center lg:mx-0 lg:flex-1 lg:text-left"
+        >
+          <h1
+            class="text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl"
+          >
+            Halo, Saya <span class="text-sky-500">Titik</span>
+            <span class="block text-sky-500">
+              Guru IPA
+              <span class="font-bold italic  text-slate-950 dark:text-white">Gen Z!</span>
+            </span>
+          </h1>
+
+          <p
+            class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300 sm:text-xl"
+          >
+            Menciptakan pembelajaran interaktif dan media ajar kreatif untuk pengalaman belajar yang mindful, meaningful, & joyful.
+          </p>
+
+          <div class="mt-8 flex justify-center lg:justify-start">
+            <a
+              href="https://www.linkedin.com/in/muhammad-hafidz-amanullah-abyan-4a8b191ab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 rounded-xl bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:-translate-y-0.5 hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            >
+              <i class="mdi mdi-account"></i>
+              Connect With Me!
+            </a>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative mt-12 flex justify-center lg:mt-0 lg:flex-1">
+          <div
+            class="absolute bottom-0 h-72 w-72 rounded-full bg-sky-100 dark:bg-sky-900/50 sm:h-96 sm:w-96"
+          ></div>
+
+          <img
+            class="relative z-10 w-72 object-contain sm:w-96 lg:w-[28rem]"
+            src="/src/assets/Titik.png"
+            alt="Titik"
+          />
         </div>
       </div>
+
+      <!-- Arrow Down -->
       <div class="relative mt-1">
-        <div class="absolute block w-full h-auto bottom-[25px] z-1 left-0">
-          <a href="#About"><i class="mdi mdi-arrow-down animate-bounce text-sky-500 dark:text-sky-300 absolute top-0 left-0 right-0 text-center inline-flex items-center justify-center rounded-full bg-white dark:bg-slate-200 h-12 w-12 mx-auto shadow-md"></i></a>
+        <div class="absolute bottom-[25px] left-0 z-10 block w-full">
+          <a
+            href="#About"
+            class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white text-sky-500 shadow-md transition hover:-translate-y-1 hover:bg-sky-50 dark:bg-slate-200"
+          >
+            <i class="mdi mdi-arrow-down animate-bounce text-xl"></i>
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
 img {
-  border-radius: 10%;
-}
-
-.mdi-arrow-down {
-  color: teal;
+  border-radius: 0;
 }
 </style>

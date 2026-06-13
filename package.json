@@ -14,7 +14,8 @@
     "@heroicons/vue": "^2.1.5",
     "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-router": "^5.0.7"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
