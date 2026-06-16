@@ -25,6 +25,11 @@ const routes = [
     path: '/refleksi',
     name: 'refleksi',
     component: () => import('../views/RefleksiView.vue')
+  },
+  {
+    path: '/filosofimengajar',
+    name: 'filosofimengajar',
+    component: () => import('../views/FilosofiMengajarView.vue')
   }
 ]
 

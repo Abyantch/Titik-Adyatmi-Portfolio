@@ -139,7 +139,7 @@ const menuItems = [
   },
   {
     name: "Filosofi Mengajar",
-    to: "/filosofi-mengajar",
+    to: "/filosofimengajar",
   },
 ];
 
