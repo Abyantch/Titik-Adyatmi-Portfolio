@@ -119,7 +119,7 @@ const darkMode = ref(false);
 const menuItems = [
   {
     name: "Profil",
-    to: "/profil",
+    to: "/",
   },
   {
     name: "Artefak",
@@ -127,7 +127,7 @@ const menuItems = [
   },
   {
     name: "Feedback",
-    to: "/lampiran",
+    to: "/feedback",
   },
   {
     name: "Model Guru",

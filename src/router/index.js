@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/profil',
+    path: '/',
     name: 'profil',
     component: () => import('../views/ProfilView.vue')
   },
@@ -12,9 +12,9 @@ const routes = [
     component: () => import('../views/ArtefakView.vue')
   },
   {
-    path: '/lampiran',
-    name: 'lampiran',
-    component: () => import('../views/LampiranView.vue')
+    path: '/feedback',
+    name: 'feedback',
+    component: () => import('../views/FeedbackView.vue')
   },
   {
     path: '/modelguru',

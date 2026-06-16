@@ -1,5 +1,5 @@
 <template>
-<div class="text-center mb-[1rem]">
+<div class="text-center mt-10 mb-[1rem]">
     <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-slate-700">
         <img class="inline-block  h-9 w-9 mr-2 rounded-full ring-2 ring-white" src="/src/assets/Titik.png" alt="" />
 		ADYTM

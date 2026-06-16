@@ -125,7 +125,7 @@ const InsightCard = defineComponent({
             "div",
             {
               class:
-                "border-t border-slate-100 bg-slate-50 px-6 py-4 dark:border-slate-700 dark:bg-slate-800",
+                "border-t border-slate-100 bg-slate-50 px-6 py-4 dark:border-slate-700 dark:bg-slate-800 right-0",
             },
             [
               h(
@@ -159,8 +159,7 @@ const ContentSection = defineComponent({
               h(
                 "span",
                 {
-                  class:
-                    "text-sky-500 bg-clip-text",
+                  class: "text-sky-500 bg-clip-text",
                 },
                 props.highlight,
               ),
@@ -221,52 +220,79 @@ const ContentSection = defineComponent({
   },
 });
 
-const DocumentLinks = defineComponent({
-  props: ["title", "links"],
+const PdfPreviewCard = defineComponent({
+  props: ["title", "file"],
   setup(props) {
     return () =>
       h(
         "div",
         {
           class:
-            "mt-12 rounded-[28px] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/60 dark:border-slate-700 dark:bg-slate-900 dark:shadow-none",
+            "mt-10 overflow-hidden rounded-[22px] border border-sky-200 bg-white p-6 shadow-xl shadow-sky-500/10 dark:border-slate-700 dark:bg-slate-900",
         },
         [
           h(
             "h3",
             {
               class:
-                "flex items-center gap-3 text-xl font-bold text-slate-800 dark:text-white",
+                "flex items-center gap-3 text-lg font-bold text-slate-800 dark:text-white",
             },
             [
-              h("i", {
-                class:
-                  "mdi mdi-file-document-multiple-outline text-2xl text-sky-500",
-              }),
+              h("i", { class: "mdi mdi-file-pdf-box text-2xl text-red-500" }),
               props.title,
             ],
           ),
+
+          h("div", {
+            class:
+              "mt-5 border-t border-dashed border-slate-200 dark:border-slate-700",
+          }),
+
           h(
             "div",
-            { class: "mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3" },
-            props.links.map((link) =>
+            {
+              class:
+                "mt-6 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800",
+            },
+            [
+              h("iframe", {
+                src: `${props.file}`,
+                class: "h-[650px] w-full",
+              }),
+            ],
+          ),
+
+          h(
+            "div",
+            {
+              class: "mt-6 flex flex-wrap justify-center gap-4",
+            },
+            [
               h(
                 "a",
                 {
-                  href: link.url,
+                  href: props.file,
                   target: "_blank",
                   class:
-                    "group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-bold text-slate-600 transition-all duration-300 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300",
+                    "inline-flex items-center gap-2 rounded-full bg-sky-500  px-6 py-3 text-xs font-bold text-white shadow-lg shadow-sky-500/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-sky-500/40",
                 },
                 [
-                  h("span", link.label),
-                  h("i", {
-                    class:
-                      "mdi mdi-open-in-new text-lg transition-transform duration-300 group-hover:translate-x-1",
-                  }),
+                  "Fullscreen",
+                  h("i", { class: "mdi mdi-open-in-new text-base" }),
                 ],
               ),
-            ),
+
+              h(
+                "a",
+                {
+                  href: props.file,
+                  download: "",
+                  class:
+                    "inline-flex items-center gap-2 rounded-full border border-sky-300 bg-white px-6 py-3 text-xs font-bold text-sky-500 transition-all duration-300 hover:-translate-y-1 hover:bg-sky-50 dark:bg-slate-900 dark:hover:bg-slate-800",
+                },
+                ["Download", h("i", { class: "mdi mdi-download text-base" })],
+              ),
+            ],
           ),
         ],
       );
@@ -362,7 +388,7 @@ const DocumentLinks = defineComponent({
       <div class="mt-20 border-t-2 border-dashed border-slate-300/80"></div>
     </div>
   </section>
-  <section class="mt-10">
+  <section class="mt-5 px-10">
     <div class="flex flex-wrap justify-center gap-4">
       <button
         v-for="tab in tabs"
@@ -387,11 +413,7 @@ const DocumentLinks = defineComponent({
           class="text-3xl font-bold text-slate-800 dark:text-white md:text-4xl"
         >
           Observasi Sekolah &
-          <span
-            class="text-sky-500 bg-clip-text"
-          >
-            Lingkungan Belajar
-          </span>
+          <span class="text-sky-500 bg-clip-text"> Lingkungan Belajar </span>
         </h2>
 
         <p
@@ -470,15 +492,20 @@ const DocumentLinks = defineComponent({
         />
       </div>
 
-      <DocumentLinks
-        title="Dokumen Observasi"
-        :links="[
-          { label: 'Laporan Observasi Manajemen Sekolah', url: '#' },
-          { label: 'Laporan Observasi Lingkungan Belajar', url: '#' },
-        ]"
-      />
+      <div class="mt-12">
+        <PdfPreviewCard
+          title="Laporan Observasi Manajemen Sekolah"
+          file="/pdf/laporan-observasi-manajemen-sekolah.pdf"
+        />
+
+        <PdfPreviewCard
+          title="Laporan Observasi Lingkungan Belajar"
+          file="/pdf/laporan-observasi-lingkungan-belajar.pdf"
+        />
+      </div>
     </div>
 
+    <!-- MODUL AJAR -->
     <div v-else-if="activeTab === 'modul'" class="mt-10">
       <ContentSection
         title="Modul Ajar"
@@ -487,23 +514,22 @@ const DocumentLinks = defineComponent({
         :cards="modulCards"
       />
 
-      <DocumentLinks
-        title="Dokumen Modul Ajar"
-        :links="[
-          {
-            label: 'Modul Ajar Siklus 1',
-            url: 'https://canva.link/drygyivhzyl5m8n',
-          },
-          {
-            label: 'Modul Ajar Siklus 2',
-            url: 'https://canva.link/m36i0wr2bd1a82i',
-          },
-          {
-            label: 'Modul Ajar Siklus 3',
-            url: 'https://canva.link/zvxdmwqpbvi6j4r',
-          },
-        ]"
-      />
+      <div class="mt-12">
+        <PdfPreviewCard
+          title="Dokumen Modul Ajar Siklus 1"
+          file="/pdf/modul-ajar-siklus-1.pdf"
+        />
+
+        <PdfPreviewCard
+          title="Dokumen Modul Ajar Siklus 2"
+          file="/pdf/modul-ajar-siklus-2.pdf"
+        />
+
+        <PdfPreviewCard
+          title="Dokumen Modul Ajar Siklus 3"
+          file="/pdf/modul-ajar-siklus-3.pdf"
+        />
+      </div>
     </div>
 
     <!-- LKM -->
@@ -514,17 +540,209 @@ const DocumentLinks = defineComponent({
         description="Lembar kerja murid yang dirancang untuk mendukung aktivitas observasi, diskusi, investigasi, proyek, dan refleksi."
         :cards="lkmCards"
       />
+        <div class="mt-12">
+            <PdfPreviewCard
+            title="LKM Siklus 1"
+            file="/pdf/lkm-siklus-1.pdf"
+            />
+    
+            <PdfPreviewCard
+            title="LKM Siklus 2"
+            file="/pdf/lkm-siklus-2.pdf"
+            />
+    
+            <PdfPreviewCard
+            title="LKM Siklus 3"
+            file="/pdf/lkm-siklus-3.pdf"
+            />
+        </div>
+    </div>
 
-      <DocumentLinks
-        title="Dokumen LKM"
-        :links="[
-          { label: 'LKM Siklus 1', url: '#' },
-          { label: 'LKM Siklus 2', url: '#' },
-          { label: 'LKM Siklus 3', url: '#' },
-        ]"
-      />
+    <div class="mt-20 border-t-2 border-dashed border-slate-300/80"></div>
+  </section>
+  <section class="relative mt-15 overflow-hidden py-20">
+    <!-- BACKGROUND GLOW -->
+    <div
+      class="absolute left-0 top-20 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"
+    ></div>
+    <div
+      class="absolute right-0 bottom-10 h-80 w-80 rounded-full bg-violet-200/40 blur-3xl"
+    ></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-6">
+      <!-- HEADER -->
+      <div class="text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-500"
+        >
+          Refleksi Produk
+        </p>
+
+        <h2
+          class="mt-3 text-3xl font-bold leading-tight text-slate-800 dark:text-white md:text-5xl"
+        >
+          Analisis & Refleksi
+          <span
+            class="block bg-gradient-to-r from-sky-500 to-violet-500 bg-clip-text text-transparent"
+          >
+            Produk Pembelajaran
+          </span>
+        </h2>
+
+        <div
+          class="mx-auto mt-5 h-[3px] w-16 rounded-full bg-gradient-to-r from-sky-500 to-violet-500"
+        ></div>
+
+        <p
+          class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400"
+        >
+          Evaluasi mendalam terhadap proses perancangan, implementasi, hingga
+          penyesuaian perangkat ajar.
+        </p>
+      </div>
+
+      <!-- REFLECTION GRID -->
+      <div class="mt-16 grid gap-8 md:grid-cols-2">
+        <!-- CARD 1 -->
+        <div
+          class="group relative overflow-hidden rounded-[32px] border border-slate-100 bg-white/90 p-8 shadow-xl shadow-slate-200/60 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none"
+        >
+          <div
+            class="absolute -right-6 -top-8 text-[130px] font-extrabold leading-none text-sky-500/10 transition-all duration-500 group-hover:right-4 group-hover:scale-110 group-hover:text-sky-500/20"
+          >
+            01
+          </div>
+
+          <div
+            class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500 transition-all duration-500 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-sky-500/30"
+          >
+            <i class="mdi mdi-alert-circle-outline text-3xl"></i>
+          </div>
+
+          <h3
+            class="relative z-10 mt-6 text-2xl font-bold text-slate-800 dark:text-white"
+          >
+            Kendala Penyusunan
+          </h3>
+
+          <p
+            class="relative z-10 mt-4 text-sm leading-8 text-slate-600 dark:text-slate-400"
+          >
+            Tantangan utama terletak pada penyusunan aktivitas yang mampu
+            mengakomodasi keberagaman kebutuhan belajar peserta didik secara
+            seimbang. Perancangan modul dan LKM memerlukan penyesuaian antara
+            tujuan pembelajaran, diferensiasi aktivitas, asesmen, serta produk
+            yang dihasilkan agar tetap selaras dengan Dimensi Profil Lulusan.
+            Pengembangan media, proyek, dan instrumen penilaian juga membutuhkan
+            waktu panjang karena harus mengukur aspek pengetahuan, keterampilan,
+            dan sikap secara terpadu.
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="group relative overflow-hidden rounded-[32px] border border-slate-100 bg-white/90 p-8 shadow-xl shadow-slate-200/60 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-violet-300 hover:shadow-violet-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none"
+        >
+          <div
+            class="absolute -right-6 -top-8 text-[130px] font-extrabold leading-none text-violet-500/10 transition-all duration-500 group-hover:right-4 group-hover:scale-110 group-hover:text-violet-500/20"
+          >
+            02
+          </div>
+
+          <div
+            class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-500 transition-all duration-500 group-hover:scale-110 group-hover:bg-violet-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-violet-500/30"
+          >
+            <i class="mdi mdi-lightbulb-on-outline text-3xl"></i>
+          </div>
+
+          <h3
+            class="relative z-10 mt-6 text-2xl font-bold text-slate-800 dark:text-white"
+          >
+            Teori & Konsep Pedagogi
+          </h3>
+
+          <p
+            class="relative z-10 mt-4 text-sm leading-8 text-slate-600 dark:text-slate-400"
+          >
+            Produk pembelajaran dirancang dengan mengintegrasikan pendekatan
+            Deep Learning yang mencakup Mindful Learning, Meaningful Learning,
+            dan Joyful Learning melalui model Project Based Learning, Problem
+            Based Learning, dan Inquiry Based Learning. Desain pembelajaran
+            diperkuat dengan prinsip pembelajaran berdiferensiasi yang
+            mengakomodasi kecerdasan majemuk peserta didik melalui aktivitas
+            visual, kinestetik, dan auditori.
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="group relative overflow-hidden rounded-[32px] border border-slate-100 bg-white/90 p-8 shadow-xl shadow-slate-200/60 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none"
+        >
+          <div
+            class="absolute -right-6 -top-8 text-[130px] font-extrabold leading-none text-sky-500/10 transition-all duration-500 group-hover:right-4 group-hover:scale-110 group-hover:text-sky-500/20"
+          >
+            03
+          </div>
+
+          <div
+            class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500 transition-all duration-500 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-sky-500/30"
+          >
+            <i class="mdi mdi-chart-line text-3xl"></i>
+          </div>
+
+          <h3
+            class="relative z-10 mt-6 text-2xl font-bold text-slate-800 dark:text-white"
+          >
+            Faktor Keberhasilan
+          </h3>
+
+          <p
+            class="relative z-10 mt-4 text-sm leading-8 text-slate-600 dark:text-slate-400"
+          >
+            Permasalahan utama kelas VIII-I adalah rendahnya motivasi belajar
+            peserta didik. Melalui pembelajaran berbasis proyek, simulasi, dan
+            produk kreatif, peserta didik menjadi lebih aktif dan antusias
+            selama proses pembelajaran. Tingginya capaian asesmen formatif dan
+            hasil produk menunjukkan bahwa pendekatan yang digunakan berhasil
+            meningkatkan keterlibatan sekaligus pemahaman konsep peserta didik.
+          </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="group relative overflow-hidden rounded-[32px] border border-slate-100 bg-white/90 p-8 shadow-xl shadow-slate-200/60 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-violet-300 hover:shadow-violet-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none"
+        >
+          <div
+            class="absolute -right-6 -top-8 text-[130px] font-extrabold leading-none text-violet-500/10 transition-all duration-500 group-hover:right-4 group-hover:scale-110 group-hover:text-violet-500/20"
+          >
+            04
+          </div>
+
+          <div
+            class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-500 transition-all duration-500 group-hover:scale-110 group-hover:bg-violet-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-violet-500/30"
+          >
+            <i class="mdi mdi-sync-circle text-3xl"></i>
+          </div>
+
+          <h3
+            class="relative z-10 mt-6 text-2xl font-bold text-slate-800 dark:text-white"
+          >
+            Perubahan & Penyesuaian
+          </h3>
+
+          <p
+            class="relative z-10 mt-4 text-sm leading-8 text-slate-600 dark:text-slate-400"
+          >
+            Melalui proses inkuiri kolaboratif, refleksi bersama menunjukkan
+            bahwa peserta didik lebih mudah memahami konsep melalui proyek dan
+            diskusi, tetapi masih memerlukan penguatan dalam menghubungkan
+            konsep antar topik. Oleh karena itu, pembelajaran selanjutnya
+            disesuaikan dengan memperbanyak aktivitas investigasi, pertanyaan
+            pemantik, dan refleksi terstruktur untuk memperkuat pemahaman
+            konseptual serta penalaran kritis peserta didik.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
-
-
