@@ -637,7 +637,7 @@ const GuruPamongCycle = defineComponent({
                 'Penilaian berfokus pada kelengkapan perangkat pembelajaran, kesesuaian tujuan, alur kegiatan, diferensiasi aktivitas, asesmen, dan keterpaduan perangkat ajar.',
               focus:
                 'Kesesuaian modul ajar, tujuan pembelajaran, langkah kegiatan, media, asesmen, dan kebutuhan belajar peserta didik.',
-              file: '/pdf/lkm-siklus-1.pdf',
+              file: '/pdf/GP_1_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -647,7 +647,7 @@ const GuruPamongCycle = defineComponent({
                 'Siklus pertama menjadi tahap awal praktik mengajar dengan fokus pada pembukaan pembelajaran, penyampaian materi, pengelolaan kelas, dan interaksi awal dengan peserta didik.',
               focus:
                 'Kemampuan membuka pembelajaran, menyampaikan materi secara sistematis, mengelola waktu, serta membangun interaksi dan partisipasi murid.',
-              file: '/pdf/lkm-siklus-1.pdf',
+              file: '/pdf/GP_1_L8.pdf',
             },
           ]"
         />
@@ -664,7 +664,7 @@ const GuruPamongCycle = defineComponent({
                 'Perangkat pembelajaran mulai disesuaikan berdasarkan refleksi siklus sebelumnya, terutama pada penguatan alur aktivitas, media, LKPD, dan asesmen formatif.',
               focus:
                 'Penguatan rancangan pembelajaran, kejelasan instruksi, kesesuaian media, serta keterpaduan antara aktivitas dan asesmen.',
-              file: '/pdf/lkm-siklus-2.pdf',
+              file: '/pdf/GP_2_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -674,7 +674,7 @@ const GuruPamongCycle = defineComponent({
                 'Praktik mengajar pada siklus kedua menekankan peningkatan keterlibatan peserta didik melalui diskusi, simulasi, kerja kelompok, dan aktivitas pembelajaran aktif.',
               focus:
                 'Kemampuan memfasilitasi diskusi, mengelola dinamika kelompok, memberikan penguatan, dan menjaga keterlibatan murid selama pembelajaran.',
-              file: '/pdf/lkm-siklus-2.pdf',
+              file: '/pdf/GP_2_L8.pdf',
             },
           ]"
         />
@@ -691,7 +691,7 @@ const GuruPamongCycle = defineComponent({
                 'Perangkat pembelajaran pada siklus ketiga menunjukkan penyempurnaan pada diferensiasi kegiatan, pemilihan media, asesmen, dan keterkaitan antara tujuan, proses, serta produk pembelajaran.',
               focus:
                 'Konsistensi perangkat ajar, kesesuaian strategi pembelajaran, instrumen penilaian, dan keterpaduan refleksi dengan tindak lanjut pembelajaran.',
-              file: '/pdf/lkm-siklus-3.pdf',
+              file: '/pdf/GP_3_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -701,7 +701,7 @@ const GuruPamongCycle = defineComponent({
                 'Praktik mengajar siklus ketiga berfokus pada pemantapan pengelolaan kelas, penguatan konsep, refleksi pembelajaran, dan keterlibatan aktif peserta didik.',
               focus:
                 'Kemampuan mengelola kelas secara lebih stabil, memantik penalaran kritis, memberi umpan balik, serta menutup pembelajaran dengan refleksi bermakna.',
-              file: '/pdf/lkm-siklus-3.pdf',
+              file: '/pdf/GP_3_L8.pdf',
             },
           ]"
         />
@@ -723,7 +723,7 @@ const GuruPamongCycle = defineComponent({
                 'Penilaian berfokus pada kelengkapan perangkat pembelajaran, kesesuaian tujuan, alur kegiatan, diferensiasi aktivitas, asesmen, dan keterpaduan perangkat ajar.',
               focus:
                 'Kesesuaian modul ajar, tujuan pembelajaran, langkah kegiatan, media, asesmen, dan kebutuhan belajar peserta didik.',
-              file: '/pdf/lkm-siklus-1.pdf',
+              file: '/pdf/Dpl_1_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -733,7 +733,7 @@ const GuruPamongCycle = defineComponent({
                 'Siklus pertama menjadi tahap awal praktik mengajar dengan fokus pada pembukaan pembelajaran, penyampaian materi, pengelolaan kelas, dan interaksi awal dengan peserta didik.',
               focus:
                 'Kemampuan membuka pembelajaran, menyampaikan materi secara sistematis, mengelola waktu, serta membangun interaksi dan partisipasi murid.',
-              file: '/pdf/lkm-siklus-1.pdf',
+              file: '/pdf/Dpl_1_L8.pdf',
             },
           ]"
         />
@@ -750,7 +750,7 @@ const GuruPamongCycle = defineComponent({
                 'Perangkat pembelajaran mulai disesuaikan berdasarkan refleksi siklus sebelumnya, terutama pada penguatan alur aktivitas, media, LKPD, dan asesmen formatif.',
               focus:
                 'Penguatan rancangan pembelajaran, kejelasan instruksi, kesesuaian media, serta keterpaduan antara aktivitas dan asesmen.',
-              file: '/pdf/lkm-siklus-2.pdf',
+              file: '/pdf/Dpl_2_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -760,7 +760,7 @@ const GuruPamongCycle = defineComponent({
                 'Praktik mengajar pada siklus kedua menekankan peningkatan keterlibatan peserta didik melalui diskusi, simulasi, kerja kelompok, dan aktivitas pembelajaran aktif.',
               focus:
                 'Kemampuan memfasilitasi diskusi, mengelola dinamika kelompok, memberikan penguatan, dan menjaga keterlibatan murid selama pembelajaran.',
-              file: '/pdf/lkm-siklus-2.pdf',
+              file: '/pdf/Dpl_2_L8.pdf',
             },
           ]"
         />
@@ -777,7 +777,7 @@ const GuruPamongCycle = defineComponent({
                 'Perangkat pembelajaran pada siklus ketiga menunjukkan penyempurnaan pada diferensiasi kegiatan, pemilihan media, asesmen, dan keterkaitan antara tujuan, proses, serta produk pembelajaran.',
               focus:
                 'Konsistensi perangkat ajar, kesesuaian strategi pembelajaran, instrumen penilaian, dan keterpaduan refleksi dengan tindak lanjut pembelajaran.',
-              file: '/pdf/lkm-siklus-3.pdf',
+              file: '/pdf/Dpl_3_L7.pdf',
             },
             {
               title: 'Penilaian Praktik Mengajar',
@@ -787,7 +787,7 @@ const GuruPamongCycle = defineComponent({
                 'Praktik mengajar siklus ketiga berfokus pada pemantapan pengelolaan kelas, penguatan konsep, refleksi pembelajaran, dan keterlibatan aktif peserta didik.',
               focus:
                 'Kemampuan mengelola kelas secara lebih stabil, memantik penalaran kritis, memberi umpan balik, serta menutup pembelajaran dengan refleksi bermakna.',
-              file: '/pdf/lkm-siklus-3.pdf',
+              file: '/pdf/Dpl_3_L8.pdf',
             },
           ]"
         />

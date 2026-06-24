@@ -18,7 +18,7 @@
           >
             Guru IPA yang
             <span
-              class="block bg-gradient-to-r from-sky-500 via-blue-600 to-violet-500 bg-clip-text text-transparent"
+              class="block bg-gradient-to-r text-sky-500 bg-clip-text"
             >
               Adaptif & Reflektif
             </span>

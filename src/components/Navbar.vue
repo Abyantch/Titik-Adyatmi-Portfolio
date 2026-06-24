@@ -42,8 +42,8 @@
           v-for="item in menuItems"
           :key="item.name"
           :to="item.to"
-          class="relative text-sm font-semibold leading-6 text-slate-700 transition-transform duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-sky-500 after:origin-center after:transition-all after:duration-1000 after:content-[''] hover:text-sky-500 hover:after:left-0 hover:after:w-full dark:text-slate-100 dark:hover:text-sky-300"
-          active-class="text-sky-500 after:left-0 after:w-full dark:text-sky-300"
+          class="relative text-sm font-semibold leading-6 text-slate-700 transition-colors duration-300 after:absolute after:-bottom-2 after:left-1/2 after:h-0.5 after:w-full after:-translate-x-1/2 after:scale-x-0 after:rounded-full after:bg-sky-500 after:transition-transform after:duration-300 after:content-[''] hover:text-sky-500 hover:after:scale-x-100 dark:text-slate-100 dark:hover:text-sky-300"
+          active-class="text-sky-500 after:scale-x-100 dark:text-sky-300"
         >
           {{ item.name }}
         </RouterLink>
@@ -73,7 +73,7 @@
           <RouterLink to="/" class="-m-1.5 p-1.5" @click="closeMobileMenu">
             <img
               class="h-8 w-auto rounded-full ring-2 ring-white dark:ring-black"
-              src="/src/assets/CTO.png"
+              src="/src/assets/Titik.png"
               alt=""
             />
           </RouterLink>

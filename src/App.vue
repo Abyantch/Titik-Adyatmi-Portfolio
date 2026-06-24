@@ -19,8 +19,8 @@ html {
   scroll-behavior: smooth;
 }
 
-#app {
+/* #app {
   padding-left: 3%;
   padding-right: 3%;
-}
+} */
 </style>

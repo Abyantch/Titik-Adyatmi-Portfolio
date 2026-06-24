@@ -15,19 +15,13 @@
       <!-- HERO -->
       <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <div
-            class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/80 px-5 py-2 text-sm font-bold uppercase tracking-[0.2em] text-sky-500 shadow-lg shadow-sky-500/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80"
-          >
-            <i class="mdi mdi-book-open-variant text-lg"></i>
-            Refleksi Akhir
-          </div>
 
           <h1
             class="mt-7 text-5xl font-black leading-tight text-slate-900 dark:text-white md:text-7xl"
           >
             Bertumbuh Menjadi
             <span
-              class="block bg-gradient-to-r from-sky-500 via-blue-600 to-violet-500 bg-clip-text text-transparent"
+              class="block bg-gradient-to-r text-sky-500 bg-clip-text"
             >
               Guru Reflektif
             </span>

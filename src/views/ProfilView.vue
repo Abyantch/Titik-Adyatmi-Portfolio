@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import serangImg from "../assets/serang.jpg";
+import inspirationImg from "../assets/inspiration.png";
+import goalsImg from "../assets/goals.png";
 
-// 1
 const accessInfo = [
   {
     icon: "bx bx-time-five",
@@ -20,109 +22,9 @@ const accessInfo = [
   },
 ];
 
-// 2
-const tabs = ref([
-  {
-    name: "website",
-    label: "Website",
-    projects: [
-      {
-        id: 1,
-        title: "LilJoy Beadies",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/Liljoy.png?updatedAt=1718337980136",
-        link: "https://github.com/Abyantch/Little-Joy-Beadies",
-        technologies: ["Boostrap", "SASS", "Vite"],
-      },
-      {
-        id: 2,
-        title: "LoveBuddy.id",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/LoveBuddy.png?updatedAt=1718337964152",
-        link: "https://github.com/Abyantch/LoveBuddy.id--Website-",
-        technologies: ["Boostrap", "Code Igniter"],
-      },
-      {
-        id: 3,
-        title: "Jadoo",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/Jadoo.png?updatedAt=1721720031446",
-        link: "https://landingpagejadoo.netlify.app",
-        technologies: ["React", "MUI", "Vite"],
-      },
-    ],
-  },
-  {
-    name: "app",
-    label: "App",
-    projects: [
-      {
-        id: 1,
-        title: "To-Do-List App",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/ToDo.png?updatedAt=1718340328776",
-        link: "https://todo-app-abyantch.netlify.app/",
-        technologies: ["Vue", "Tailwind"],
-      },
-      {
-        id: 2,
-        title: "Drication",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/Drication.png?updatedAt=1718337960774",
-        link: "https://github.com/Abyantch/Diabetic-retinopathy-identification-CLAHE-2D-LDA-Using-Hassanat-Distance-KNN-H-KNN-algorithm.",
-        technologies: ["Python", "Scikit-learn", "OpenCV"],
-      },
-      {
-        id: 3,
-        title: "KanbanKuu",
-        image:
-          "https://ik.imagekit.io/ymfeid1q7/KanbanKuu?updatedAt=1721645598549",
-        link: "https://kanbankuu-abyantch.netlify.app/",
-        technologies: ["React", "MUI", "Vite"],
-      },
-    ],
-  },
-  {
-    name: "video",
-    label: "Video",
-    projects: [
-      {
-        id: 1,
-        title: "Lomba Lampah Kita Pemkot Semarang Tahun 2024",
-        image: "",
-        link: "https://www.youtube.com/embed/mC_-IauuOuk?si=PIqHneSlQDHTcOK3",
-        technologies: ["Premiere Pro", "Capcut Pro"],
-      },
-      {
-        id: 2,
-        title: "Video Profil UMKM Tahu Hambida",
-        image: "",
-        link: "https://www.youtube.com/embed/xkYnUY0mguM?si=84rGaWpKyZhO1TlM",
-        technologies: ["Premiere Pro", "Capcut Pro"],
-      },
-      {
-        id: 3,
-        title: "Lomba Kampung Hebat Kota Semarang tahun 2024",
-        image: "",
-        link: "https://www.youtube.com/embed/t6lbIY2AW9w?si=OS1C5FMrfmfC-_Iw",
-        technologies: ["Premiere Pro", "Capcut Pro"],
-      },
-    ],
-  },
-]);
-
-const currentTab = ref(tabs.value[0]);
-
-//3
-import { onMounted, onBeforeUnmount } from "vue";
-
 const currentSlide = ref(0);
 
-const images = [
-  "/src/assets/serang.jpg",
-  "/src/assets/inspiration.png",
-  "/src/assets/goals.png",
-];
+const images = [serangImg, inspirationImg, goalsImg];
 
 const slideTexts = [
   {
@@ -221,7 +123,7 @@ onBeforeUnmount(() => {
 
           <div class="mt-8 flex justify-center lg:justify-start">
             <a
-              href="https://www.linkedin.com/in/muhammad-hafidz-amanullah-abyan-4a8b191ab/"
+              href="https://www.instagram.com/titikadyatmi/"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-3 rounded-xl bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:-translate-y-0.5 hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
@@ -601,7 +503,7 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section>
-    <div class="mt-20">
+    <div class="mt-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- HEADER -->
       <div class="text-center">
         <p
