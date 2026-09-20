@@ -6,6 +6,23 @@ const routes = [
     name: 'profil',
     component: () => import('../views/ProfilView.vue')
   },
+
+  {
+    path: "/seminar/refleksi",
+    name: "seminar-refleksi",
+    component: () => import("../views/Seminar-RefleksiView.vue"),
+  },
+  {
+    path: "/seminar/artefak",
+    name: "seminar-artefak",
+    component: () => import("../views/Seminar-ArtefakView.vue"),
+  },
+  {
+    path: "/seminar/3",
+    name: "seminar-3",
+    component: () => import("../views/Seminar3View.vue"),
+  },
+
   {
     path: '/artefak',
     name: 'artefak',
