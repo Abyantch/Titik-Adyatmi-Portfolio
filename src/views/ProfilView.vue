@@ -43,6 +43,33 @@ const slideTexts = [
   },
 ];
 
+const misiList = [
+  {
+    icon: "mdi mdi-lightbulb-on-outline",
+    title: "Pembelajaran Kreatif & Interaktif",
+    description:
+      "Merancang media dan metode ajar yang variatif agar konsep IPA mudah dipahami dan menyenangkan untuk dipelajari.",
+  },
+  {
+    icon: "mdi mdi-heart-outline",
+    title: "Pendekatan yang Humanis",
+    description:
+      "Membangun kedekatan emosional dengan peserta didik melalui empati, kesabaran, dan komunikasi yang terbuka.",
+  },
+  {
+    icon: "mdi mdi-chart-line",
+    title: "Bertumbuh Secara Berkelanjutan",
+    description:
+      "Terus mengasah kompetensi pedagogik, profesional, sosial, dan kepribadian sepanjang perjalanan menjadi guru.",
+  },
+  {
+    icon: "mdi mdi-account-group-outline",
+    title: "Kolaborasi & Gotong Royong",
+    description:
+      "Menumbuhkan semangat kerja sama antar peserta didik dan komunitas belajar yang inklusif serta saling mendukung.",
+  },
+];
+
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % images.length;
 };
@@ -497,6 +524,124 @@ onBeforeUnmount(() => {
                 </p>
               </div>
             </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="VisiMisi" class="bg-white dark:bg-slate-950 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-500"
+        >
+          Arah & Tujuan
+        </p>
+
+        <h2
+          class="mt-3 text-3xl font-bold text-slate-800 dark:text-white md:text-4xl"
+        >
+          Visi & <span class="text-sky-500">Misi</span>
+        </h2>
+
+        <div class="mx-auto mt-4 h-[2px] w-20 rounded-full bg-sky-500"></div>
+
+        <p
+          class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400"
+        >
+          Landasan nilai dan langkah nyata yang saya pegang dalam perjalanan
+          menjadi guru IPA yang profesional.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <div
+            class="animate-float relative flex h-full flex-col overflow-hidden rounded-[32px] border border-white/20 bg-gradient-to-br from-sky-400 via-sky-500 to-blue-500 px-8 py-10 text-white shadow-[0_20px_50px_rgba(14,165,233,0.25)] dark:border-slate-700"
+          >
+            <div
+              class="absolute -right-8 -top-16 select-none text-[160px] font-bold leading-none text-white/10"
+            >
+              ”
+            </div>
+
+            <div
+              class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_35%)]"
+            ></div>
+
+            <div class="relative z-10 flex h-full flex-col">
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-2xl backdrop-blur-sm"
+              >
+                <i class="mdi mdi-flag-outline"></i>
+              </div>
+
+              <p
+                class="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
+              >
+                Visi
+              </p>
+
+              <p
+                class="mt-4 flex-1 text-xl italic leading-9 text-white/95 md:text-[1.4rem]"
+              >
+                Menjadi guru IPA yang profesional, adaptif, dan mampu
+                menghadirkan pembelajaran yang mindful, meaningful, & joyful
+                bagi setiap peserta didik.
+              </p>
+
+              <div class="mt-8 flex items-center gap-4">
+                <div class="h-[2px] w-12 rounded-full bg-white/40"></div>
+
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
+                >
+                  Titik &mdash; Guru IPA
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="grid h-full gap-5 sm:grid-cols-2">
+            <div
+              v-for="(misi, index) in misiList"
+              :key="misi.title"
+              class="group relative overflow-hidden rounded-[26px] border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/20 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none"
+            >
+              <span
+                class="pointer-events-none absolute -right-3 -top-5 select-none text-6xl font-bold text-sky-500/10 transition-all duration-500 group-hover:text-sky-500/20"
+              >
+                {{ String(index + 1).padStart(2, "0") }}
+              </span>
+
+              <div class="relative z-10">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10 text-xl text-sky-500 transition-all duration-300 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white"
+                >
+                  <i :class="misi.icon"></i>
+                </div>
+
+                <p
+                  class="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-sky-500"
+                >
+                  Misi {{ String(index + 1).padStart(2, "0") }}
+                </p>
+
+                <h4
+                  class="mt-1 text-base font-semibold text-slate-800 dark:text-white"
+                >
+                  {{ misi.title }}
+                </h4>
+
+                <p
+                  class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400"
+                >
+                  {{ misi.description }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
