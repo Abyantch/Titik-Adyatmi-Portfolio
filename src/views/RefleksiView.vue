@@ -423,7 +423,7 @@ const SectionTitle = defineComponent({
           "span",
           {
             class:
-              "inline-flex rounded-full bg-gradient-to-r from-sky-500 to-violet-500 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-sky-500/20",
+              "inline-flex rounded-full bg-sky-500 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-sky-500/20",
           },
           props.badge,
         ),
