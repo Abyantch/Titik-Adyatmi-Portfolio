@@ -46,27 +46,27 @@ const slideTexts = [
 const misiList = [
   {
     icon: "mdi mdi-lightbulb-on-outline",
-    title: "Pembelajaran Kreatif & Interaktif",
+    title: "Mengenali",
     description:
-      "Merancang media dan metode ajar yang variatif agar konsep IPA mudah dipahami dan menyenangkan untuk dipelajari.",
+      "Memahami kemampuan, kebutuhan, karakteristik, dan pengalaman belajar setiap murid.",
   },
   {
     icon: "mdi mdi-heart-outline",
-    title: "Pendekatan yang Humanis",
+    title: "Menghadirkan",
     description:
-      "Membangun kedekatan emosional dengan peserta didik melalui empati, kesabaran, dan komunikasi yang terbuka.",
+      "Menciptakan suasana belajar yang aman, positif, ramah, dan menyenangkan.",
   },
   {
     icon: "mdi mdi-chart-line",
-    title: "Bertumbuh Secara Berkelanjutan",
+    title: "Menghubungkan",
     description:
-      "Terus mengasah kompetensi pedagogik, profesional, sosial, dan kepribadian sepanjang perjalanan menjadi guru.",
+      "Mengaitkan pembelajaran IPA dengan kehidupan sehari-hari, lingkungan, dan pengalaman murid.",
   },
   {
     icon: "mdi mdi-account-group-outline",
-    title: "Kolaborasi & Gotong Royong",
+    title: "Mengembangkan",
     description:
-      "Menumbuhkan semangat kerja sama antar peserta didik dan komunitas belajar yang inklusif serta saling mendukung.",
+      "Memanfaatkan teknologi dan inovasi secara bijaksana untuk mendukung proses belajar dan perkembangan murid.",
   },
 ];
 
@@ -311,8 +311,7 @@ onBeforeUnmount(() => {
                     class="max-w-xl text-lg italic leading-9 text-white/90 md:text-[1.35rem]"
                   >
                     Belajar bukan untuk menjadi yang paling terbaik, tetapi agar
-                    kita tidak berhenti bertumbuh dan terjebak dalam
-                    kebodohan.
+                    kita tidak berhenti bertumbuh dan terjebak dalam kebodohan.
                   </p>
 
                   <div class="mt-8 flex items-center gap-4">
@@ -529,7 +528,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </section>
-  <section id="VisiMisi" class="bg-white dark:bg-slate-950 py-20">
+  <section id="VisiMisi" class="bg-white py-20 dark:bg-slate-950">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p
@@ -555,50 +554,81 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-5">
-        <div class="lg:col-span-2">
+        <div class="grid gap-5 lg:col-span-2">
           <div
-            class="animate-float relative flex h-full flex-col overflow-hidden rounded-[32px] border border-white/20 bg-gradient-to-br from-sky-400 via-sky-500 to-blue-500 px-8 py-10 text-white shadow-[0_20px_50px_rgba(14,165,233,0.25)] dark:border-slate-700"
+            class="group relative overflow-hidden rounded-[28px] border border-white/20 bg-gradient-to-br from-sky-400 via-sky-500 to-blue-500 p-7 text-white shadow-[0_15px_40px_rgba(14,165,233,0.20)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(14,165,233,0.30)] dark:border-slate-700"
           >
             <div
-              class="absolute -right-8 -top-16 select-none text-[160px] font-bold leading-none text-white/10"
+              class="absolute -right-6 -top-10 select-none text-[120px] font-bold leading-none text-white/10 transition-transform duration-500 group-hover:scale-110"
             >
               ”
             </div>
 
             <div
-              class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_35%)]"
+              class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_40%)]"
             ></div>
 
-            <div class="relative z-10 flex h-full flex-col">
+            <div class="relative z-10">
               <div
-                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-2xl backdrop-blur-sm"
+                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-xl backdrop-blur-sm"
               >
                 <i class="mdi mdi-flag-outline"></i>
               </div>
 
               <p
-                class="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
+                class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-white/70"
               >
-                Visi
+                Visi untuk Pendidikan di Indonesia
               </p>
+
+              <h3 class="mt-3 text-xl font-bold leading-tight sm:text-2xl">
+                Mewujudkan Pendidikan yang Inklusif dan Bermakna
+              </h3>
+
+              <p class="mt-4 text-sm leading-7 text-white/80">
+                Mewujudkan pendidikan yang inklusif dan bermakna dengan
+                menghargai perbedaan, memenuhi kebutuhan belajar, serta
+                memanfaatkan teknologi secara bijaksana untuk mengembangkan
+                karakter dan potensi setiap murid.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group relative overflow-hidden rounded-[28px] border border-white/20 bg-gradient-to-br from-sky-400 via-sky-500 to-blue-500 p-7 text-white shadow-[0_15px_40px_rgba(14,165,233,0.20)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(14,165,233,0.30)] dark:border-slate-700"
+          >
+            <div
+              class="absolute -right-6 -top-10 select-none text-[120px] font-bold leading-none text-white/10 transition-transform duration-500 group-hover:scale-110"
+            >
+              ”
+            </div>
+
+            <div
+              class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_40%)]"
+            ></div>
+
+            <div class="relative z-10">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-xl backdrop-blur-sm"
+              >
+                <i class="mdi mdi-school-outline"></i>
+              </div>
 
               <p
-                class="mt-4 flex-1 text-xl italic leading-9 text-white/95 md:text-[1.4rem]"
+                class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-white/70"
               >
-                Menjadi guru IPA yang profesional, adaptif, dan mampu
-                menghadirkan pembelajaran yang mindful, meaningful, & joyful
-                bagi setiap peserta didik.
+                Visi sebagai Calon Guru
               </p>
 
-              <div class="mt-8 flex items-center gap-4">
-                <div class="h-[2px] w-12 rounded-full bg-white/40"></div>
+              <h3 class="mt-3 text-xl font-bold leading-tight sm:text-2xl">
+                Menjadi Guru IPA yang Adaptif, Reflektif, dan Inovatif
+              </h3>
 
-                <p
-                  class="text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
-                >
-                  Titik &mdash; Guru IPA
-                </p>
-              </div>
+              <p class="mt-4 text-sm leading-7 text-white/80">
+                Menjadi guru IPA yang adaptif, reflektif, dan inovatif dengan
+                menciptakan pembelajaran yang bermakna, kontekstual, dan
+                berpusat pada murid.
+              </p>
             </div>
           </div>
         </div>
@@ -634,7 +664,6 @@ onBeforeUnmount(() => {
                 >
                   {{ misi.title }}
                 </h4>
-
                 <p
                   class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400"
                 >
