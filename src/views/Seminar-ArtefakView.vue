@@ -197,7 +197,7 @@
 
       <div v-if="activeCourse" class="mt-10">
         <div :key="activeCourse.id">
-          <div class="grid gap-6 md:grid-cols-2">
+          <div v-if="activeCourse.documents.length" class="grid gap-6 md:grid-cols-2">
             <article
               v-for="(document, index) in activeCourse.documents"
               :key="document.file"
@@ -262,6 +262,14 @@
               </div>
             </article>
           </div>
+          <div
+            v-else
+            class="rounded-[28px] border border-dashed border-slate-300 bg-white/60 px-6 py-12 text-center dark:border-slate-700 dark:bg-slate-900/50"
+          >
+            <i class="mdi mdi-folder-open-outline text-4xl text-sky-500"></i>
+            <h3 class="mt-4 text-lg font-bold text-slate-700 dark:text-slate-200">Dokumen belum tersedia</h3>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Artefak untuk mata kuliah ini akan ditampilkan di sini.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -321,7 +329,13 @@ const mataKuliahTabs = {
     },
   ],
 
-  "semester-2": [],
+  "semester-2": [
+    { id: "etnopedagogi", label: "Etnopedagogi", icon: BookOpenIcon },
+    { id: "pmal", label: "Pembelajaran Mendalam & Asesmen Lanjutan", icon: AcademicCapIcon },
+    { id: "pse", label: "Pendidikan Sosial Emosional", icon: SparklesIcon },
+    { id: "ppl-semester-2", label: "PPL", icon: UserGroupIcon },
+    { id: "proyek-kepemimpinan", label: "Proyek Kepemimpinan", icon: LightBulbIcon },
+  ],
 };
 
 const mataKuliahList = [
@@ -522,6 +536,58 @@ const mataKuliahList = [
       },
     ],
   },
+  {
+    id: "etnopedagogi",
+    semester: "semester-2",
+    documents: [
+      { title: "Topik 1 — Sintesis", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 1/4001420026_Titiek Triadyatmi_1.D Sintesis.pdf", downloadName: "4001420026_Titiek Triadyatmi_1.D Sintesis.pdf" },
+      { title: "Topik 1 — Aktivitas 1E", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 1/2237253195_Titiek Triadyatmi_1E.pdf", downloadName: "2237253195_Titiek Triadyatmi_1E.pdf" },
+      { title: "Topik 2 — Sintesis", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 2/2237253195_Titiek Triadyatmi_2D Sintesis.pdf", downloadName: "2237253195_Titiek Triadyatmi_2D Sintesis.pdf" },
+      { title: "Topik 2 — Aktivitas 2E", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 2/2237253195_Titiek Triadyatmi_2.E..pdf", downloadName: "2237253195_Titiek Triadyatmi_2.E..pdf" },
+      { title: "Topik 3 — Sintesis", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 3/2237253195_Titiek Triadyatmi_3.D. Sintesis.pdf", downloadName: "2237253195_Titiek Triadyatmi_3.D. Sintesis.pdf" },
+      { title: "Topik 3 — Aktivitas 3E", file: "/pdf/ARTEFAK SEMESTER 2/ETNOPEDAGOGI/TOPIK 3/2237253195_Titiek Triadyatmi_3.E..pdf", downloadName: "2237253195_Titiek Triadyatmi_3.E..pdf" },
+    ],
+  },
+  {
+    id: "pmal",
+    semester: "semester-2",
+    documents: [
+      { title: "Topik 1 — Asesmen Kognitif dan Nonkognitif", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 1/Kelompok 2_Asesmen Kognitif dan Non Kognitif (1).pdf", downloadName: "Kelompok 2_Asesmen Kognitif dan Non Kognitif (1).pdf" },
+      { title: "Topik 2 — Microteaching", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 2/2237253195_Titiek Triadyatmi_2C Microteaching.pdf", downloadName: "2237253195_Titiek Triadyatmi_2C Microteaching.pdf" },
+      { title: "Topik 2 — Aktivitas 2D", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 2/2237253195_Titiek Triadyatmi_2D.pdf", downloadName: "2237253195_Titiek Triadyatmi_2D.pdf" },
+      { title: "Topik 3 — Microteaching", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 3/2237253195_Titiek Triadyatmi_3C Microteaching.pdf", downloadName: "2237253195_Titiek Triadyatmi_3C Microteaching.pdf" },
+      { title: "Topik 3 — Aktivitas 3D", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 3/2237253195_Titiek Triadyatmi_3D.pdf", downloadName: "2237253195_Titiek Triadyatmi_3D.pdf" },
+      { title: "Topik 4 — Microteaching", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 4/2237253195_Titiek Triadyatmi_4C Microteaching.pdf", downloadName: "2237253195_Titiek Triadyatmi_4C Microteaching.pdf" },
+      { title: "Topik 5 — Aktivitas 5C", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 5/2237253195_Titiek Triadyatmi_5C.pdf", downloadName: "2237253195_Titiek Triadyatmi_5C.pdf" },
+      { title: "Topik 5 — Aktivitas 5D", file: "/pdf/ARTEFAK SEMESTER 2/PMAL/TOPIK 5/2237253195_Titiek Triadyatmi_5D.pdf", downloadName: "2237253195_Titiek Triadyatmi_5D.pdf" },
+    ],
+  },
+  {
+    id: "pse",
+    semester: "semester-2",
+    documents: [
+      { title: "Topik 1 — Aktivitas 1C", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 1/2237253195_Titiek Triadyatmi_1C.pdf", downloadName: "2237253195_Titiek Triadyatmi_1C.pdf" },
+      { title: "Topik 1 — Aktivitas 1D", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 1/2237253195_Titiek Triadyatmi_1D.pdf", downloadName: "2237253195_Titiek Triadyatmi_1D.pdf" },
+      { title: "Topik 1 — Aktivitas 1E", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 1/2237253195_Titiek Triadyatmi_1E.pdf", downloadName: "2237253195_Titiek Triadyatmi_1E.pdf" },
+      { title: "Topik 1 — Lembar Kerja 1B", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 1/2237253195_Titiek Triadyatmi_LK 1.B.pdf", downloadName: "2237253195_Titiek Triadyatmi_LK 1.B.pdf" },
+      { title: "Topik 2 — Aktivitas 2B", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 2/2237253195_Titiek Triadyatmi_2B.pdf", downloadName: "2237253195_Titiek Triadyatmi_2B.pdf" },
+      { title: "Topik 2 — Aktivitas 2C", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 2/2237253195_Titiek Triadyatmi_2C.pdf", downloadName: "2237253195_Titiek Triadyatmi_2C.pdf" },
+      { title: "Topik 2 — Aktivitas 2D", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 2/2237253195_Titiek Triadyatmi_2D PSE.pdf", downloadName: "2237253195_Titiek Triadyatmi_2D PSE.pdf" },
+      { title: "Topik 2 — Aktivitas 2E", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 2/2237253195_Titiek Triadyatmi_2E.pdf", downloadName: "2237253195_Titiek Triadyatmi_2E.pdf" },
+      { title: "Topik 3 — Experiential Learning", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 3/Kelompok 2_3A Experiental Learning.pdf", downloadName: "Kelompok 2_3A Experiental Learning.pdf" },
+      { title: "Topik 3 — Aktivitas 3B", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 3/2237253195_Titiek Triadyatmi_3B.pdf", downloadName: "2237253195_Titiek Triadyatmi_3B.pdf" },
+      { title: "Topik 3 — Aktivitas 3C", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 3/2237253195_Titiek Triadyatmi_3C.pdf", downloadName: "2237253195_Titiek Triadyatmi_3C.pdf" },
+      { title: "Topik 4 — Aktivitas 4.1", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi 4.1.pdf", downloadName: "2237253195_Titiek Triadyatmi 4.1.pdf" },
+      { title: "Topik 4 — Aktivitas 4B", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4B.pdf", downloadName: "2237253195_Titiek Triadyatmi_4B.pdf" },
+      { title: "Topik 4 — Aktivitas 4B.3", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4B.3.pdf", downloadName: "2237253195_Titiek Triadyatmi_4B.3.pdf" },
+      { title: "Topik 4 — Aktivitas 4C", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4C.pdf", downloadName: "2237253195_Titiek Triadyatmi_4C.pdf" },
+      { title: "Topik 4 — Aktivitas 4D", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4D.pdf", downloadName: "2237253195_Titiek Triadyatmi_4D.pdf" },
+      { title: "Topik 4 — Aktivitas 4E.1", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4E.1.pdf", downloadName: "2237253195_Titiek Triadyatmi_4E.1.pdf" },
+      { title: "Topik 4 — Aktivitas 4E.2", file: "/pdf/ARTEFAK SEMESTER 2/PSE/TOPIK 4/2237253195_Titiek Triadyatmi_4E.2.pdf", downloadName: "2237253195_Titiek Triadyatmi_4E.2.pdf" },
+    ],
+  },
+  { id: "ppl-semester-2", semester: "semester-2", documents: [] },
+  { id: "proyek-kepemimpinan", semester: "semester-2", documents: [] },
 ];
 
 const activeCourse = computed(() =>
