@@ -195,18 +195,11 @@
         </p>
       </div>
 
-      <div
-        v-if="activeMataKuliah"
-        class="mt-10"
-      >
-        <div
-          v-for="course in mataKuliahList"
-          v-show="activeMataKuliah === course.id"
-          :key="course.id"
-        >
+      <div v-if="activeCourse" class="mt-10">
+        <div :key="activeCourse.id">
           <div class="grid gap-6 md:grid-cols-2">
             <article
-              v-for="(document, index) in course.documents"
+              v-for="(document, index) in activeCourse.documents"
               :key="document.file"
               class="group relative overflow-hidden rounded-[32px] border border-sky-200 bg-white/90 p-5 shadow-xl shadow-sky-500/10 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none dark:hover:border-sky-700"
             >
@@ -228,11 +221,23 @@
                 class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800"
               >
                 <iframe
+                  v-if="document.type !== 'pptx' && document.type !== 'image'"
                   :src="pdfUrl(document.file)"
                   :title="document.title"
                   class="h-[520px] w-full"
                   loading="lazy"
                 ></iframe>
+                <img
+                  v-else-if="document.type === 'image'"
+                  :src="pdfUrl(document.file)"
+                  :alt="document.title"
+                  class="h-[520px] w-full object-contain"
+                  loading="lazy"
+                />
+                <div v-else class="flex h-[520px] flex-col items-center justify-center gap-4 px-6 text-center">
+                  <i class="mdi mdi-file-powerpoint-box text-6xl text-orange-500"></i>
+                  <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">Preview PowerPoint tidak tersedia di halaman ini.</p>
+                </div>
               </div>
 
               <div class="mt-5 flex flex-wrap justify-center gap-3">
@@ -264,7 +269,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import {
   UserGroupIcon,
   AcademicCapIcon,
@@ -272,9 +277,6 @@ import {
   LightBulbIcon,
   BookOpenIcon,
 } from "@heroicons/vue/24/outline";
-
-import collagePhotoOne from "../assets/titik2.jpg";
-import collagePhotoTwo from "../assets/wisuda.png";
 
 const activeSemester = ref("semester-1");
 const activeMataKuliah = ref("peserta-didik");
@@ -328,29 +330,30 @@ const mataKuliahList = [
     semester: "semester-1",
     documents: [
       {
-        title: "Asesmen Awal Pembelajaran",
-        file: "/pdf/artefak_ppdp_01.pdf",
-        downloadName: "artefak_ppdp_01.pdf",
+        title: "Artefak Peserta Didik & Pembelajaran 01",
+        file: "/pdf/ARTEFAK SEMESTER 1/PPDP/sem_art_mk_ppdp_1d.png",
+        downloadName: "sem_art_mk_ppdp_1d.png",
+        type: "image",
       },
       {
-        title: "Analisis Karakteristik Peserta Didik",
-        file: "/pdf/artefak_ppdp_02.pdf",
-        downloadName: "artefak_ppdp_02.pdf",
+        title: "Artefak Peserta Didik & Pembelajaran 02",
+        file: "/pdf/ARTEFAK SEMESTER 1/PPDP/sem_art_mk_ppdp_2e.pdf",
+        downloadName: "sem_art_mk_ppdp_2e.pdf",
       },
       {
-        title: "Analisis Kebutuhan Peserta Didik",
-        file: "/pdf/artefak_ppdp_03.pdf",
-        downloadName: "artefak_ppdp_03.pdf",
+        title: "Artefak Peserta Didik & Pembelajaran 03",
+        file: "/pdf/ARTEFAK SEMESTER 1/PPDP/sem_art_mk_ppdp_3d.pdf",
+        downloadName: "sem_art_mk_ppdp_3d.pdf",
       },
       {
-        title: "Perancangan Pembelajaran",
-        file: "/pdf/artefak_ppdp_04.pdf",
-        downloadName: "artefak_ppdp_04.pdf",
+        title: "Artefak Peserta Didik & Pembelajaran 04",
+        file: "/pdf/ARTEFAK SEMESTER 1/PPDP/sem_art_mk_ppdp_4d.pdf",
+        downloadName: "sem_art_mk_ppdp_4d.pdf",
       },
       {
-        title: "Refleksi Pembelajaran",
-        file: "/pdf/artefak_ppdp_05.pdf",
-        downloadName: "artefak_ppdp_05.pdf",
+        title: "Artefak Peserta Didik & Pembelajaran 05",
+        file: "/pdf/ARTEFAK SEMESTER 1/PPDP/sem_art_mk_ppdp_4e.pdf",
+        downloadName: "sem_art_mk_ppdp_4e.pdf",
       },
     ],
   },
@@ -361,28 +364,34 @@ const mataKuliahList = [
     documents: [
       {
         title: "Artefak Pembelajaran Mendalam 01",
-        file: "/pdf/artefak_pma_01.pdf",
-        downloadName: "artefak_pma_01.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_1d.1",
+        downloadName: "sem_art_mk_pma_1d.1",
+        type: "image",
       },
       {
         title: "Artefak Pembelajaran Mendalam 02",
-        file: "/pdf/artefak_pma_02.pdf",
-        downloadName: "artefak_pma_02.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_2d.1",
+        downloadName: "sem_art_mk_pma_2d.1",
       },
       {
         title: "Artefak Pembelajaran Mendalam 03",
-        file: "/pdf/artefak_pma_03.pdf",
-        downloadName: "artefak_pma_03.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_3d.pdf",
+        downloadName: "sem_art_mk_pma_3d.pdf",
       },
       {
         title: "Artefak Pembelajaran Mendalam 04",
-        file: "/pdf/artefak_pma_04.pdf",
-        downloadName: "artefak_pma_04.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_3e.pdf",
+        downloadName: "sem_art_mk_pma_3e.pdf",
       },
       {
         title: "Artefak Pembelajaran Mendalam 05",
-        file: "/pdf/artefak_pma_05.pdf",
-        downloadName: "artefak_pma_05.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_4d.pdf",
+        downloadName: "sem_art_mk_pma_4d.pdf",
+      },
+      {
+        title: "Artefak Pembelajaran Mendalam 06",
+        file: "/pdf/ARTEFAK SEMESTER 1/PMA/sem_art_mk_pma_4e.pdf",
+        downloadName: "sem_art_mk_pma_4e.pdf",
       },
     ],
   },
@@ -393,23 +402,29 @@ const mataKuliahList = [
     documents: [
       {
         title: "Artefak Growth Mindset 01",
-        file: "/pdf/artefak_gm_01.pdf",
-        downloadName: "artefak_gm_01.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/GM/sem_art_mk_gm_1a.pdf",
+        downloadName: "sem_art_mk_gm_1a.pdf",
       },
       {
         title: "Artefak Growth Mindset 02",
-        file: "/pdf/artefak_gm_02.pdf",
-        downloadName: "artefak_gm_02.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/GM/sem_art_mk_gm_1d.pptx",
+        downloadName: "sem_art_mk_gm_1d.pptx",
+        type: "pptx",
       },
       {
         title: "Artefak Growth Mindset 03",
-        file: "/pdf/artefak_gm_03.pdf",
-        downloadName: "artefak_gm_03.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/GM/sem_art_mk_gm_2a.pdf",
+        downloadName: "sem_art_mk_gm_2a.pdf",
       },
       {
         title: "Artefak Growth Mindset 04",
-        file: "/pdf/artefak_gm_04.pdf",
-        downloadName: "artefak_gm_04.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/GM/sem_art_mk_gm_3a.pdf",
+        downloadName: "sem_art_mk_gm_3a.pdf",
+      },
+      {
+        title: "Artefak Growth Mindset 05",
+        file: "/pdf/ARTEFAK SEMESTER 1/GM/sem_art_mk_gm_4c.pdf",
+        downloadName: "sem_art_mk_gm_4c.pdf",
       },
     ],
   },
@@ -420,23 +435,28 @@ const mataKuliahList = [
     documents: [
       {
         title: "Artefak Design Thinking 01",
-        file: "/pdf/artefak_dt_01.pdf",
-        downloadName: "artefak_dt_01.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/DT/sem_art_s1_mk_dt_1.pdf",
+        downloadName: "sem_art_s1_mk_dt_1.pdf",
       },
       {
         title: "Artefak Design Thinking 02",
-        file: "/pdf/artefak_dt_02.pdf",
-        downloadName: "artefak_dt_02.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/DT/sem_art_s1_mk_dt_2.pdf",
+        downloadName: "sem_art_s1_mk_dt_2.pdf",
       },
       {
         title: "Artefak Design Thinking 03",
-        file: "/pdf/artefak_dt_03.pdf",
-        downloadName: "artefak_dt_03.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/DT/sem_art_s1_mk_dt_3.pdf",
+        downloadName: "sem_art_s1_mk_dt_3.pdf",
       },
       {
         title: "Artefak Design Thinking 04",
-        file: "/pdf/artefak_dt_04.pdf",
-        downloadName: "artefak_dt_04.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/DT/sem_art_s1_mk_dt_4.pdf",
+        downloadName: "sem_art_s1_mk_dt_4.pdf",
+      },
+      {
+        title: "Artefak Design Thinking 05",
+        file: "/pdf/ARTEFAK SEMESTER 1/DT/sem_art_s1_mk_dt_5.pdf",
+        downloadName: "sem_art_s1_mk_dt_5.pdf",
       },
     ],
   },
@@ -447,32 +467,70 @@ const mataKuliahList = [
     documents: [
       {
         title: "Artefak Filosofi Pendidikan 01",
-        file: "/pdf/artefak_filosofi_01.pdf",
-        downloadName: "artefak_filosofi_01.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 1/2237253195_Titiek Triadyatmi_Aktivitas 1.4.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_Aktivitas 1.4.pdf",
       },
       {
         title: "Artefak Filosofi Pendidikan 02",
-        file: "/pdf/artefak_filosofi_02.pdf",
-        downloadName: "artefak_filosofi_02.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 2/2237253195_Titiek Triadatmi_2D Sintesis.pdf",
+        downloadName: "2237253195_Titiek Triadatmi_2D Sintesis.pdf",
       },
       {
         title: "Artefak Filosofi Pendidikan 03",
-        file: "/pdf/artefak_filosofi_03.pdf",
-        downloadName: "artefak_filosofi_03.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 2/2237253195_Titiek Triadyatmi_2.5 Refleksi dan Tindak Lanjut.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_2.5 Refleksi dan Tindak Lanjut.pdf",
       },
       {
         title: "Artefak Filosofi Pendidikan 04",
-        file: "/pdf/artefak_filosofi_04.pdf",
-        downloadName: "artefak_filosofi_04.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 2/2237253195_Titiek Triadyatmi_Analisis Sokola Rimba.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_Analisis Sokola Rimba.pdf",
       },
       {
         title: "Artefak Filosofi Pendidikan 05",
-        file: "/pdf/artefak_filosofi_05.pdf",
-        downloadName: "artefak_filosofi_05.pdf",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 2/2237253195_Titiek Triadyatmi_TUG OF WAR.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_TUG OF WAR.pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 06",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 3/2237253195_Titiek Triadyatmi_3.5. Refleksi dan Tindak Lanjut.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_3.5. Refleksi dan Tindak Lanjut.pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 07",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 3/Kelompok 2_3.4 Peran Guru dalam Pendidikan Nilai (1).pdf",
+        downloadName: "Kelompok 2_3.4 Peran Guru dalam Pendidikan Nilai (1).pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 08",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 3/LK 3C_Kelompok 2.pdf",
+        downloadName: "LK 3C_Kelompok 2.pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 09",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 4/2237253195_Titiek Triadyatmi_4.C. Kasus-kasus Pelanggaran Kode Etik Guru.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_4.C. Kasus-kasus Pelanggaran Kode Etik Guru.pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 10",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 4/2237253195_Titiek Triadyatmi_4.D. Kode etik dalam kerangka pendidikan nilai.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_4.D. Kode etik dalam kerangka pendidikan nilai.pdf",
+      },
+      {
+        title: "Artefak Filosofi Pendidikan 11",
+        file: "/pdf/ARTEFAK SEMESTER 1/FILOSOFI/TOPIK 4/2237253195_Titiek Triadyatmi_4.E. Refleksi dan Aksi Nyata.pdf",
+        downloadName: "2237253195_Titiek Triadyatmi_4.E. Refleksi dan Aksi Nyata.pdf",
       },
     ],
   },
 ];
+
+const activeCourse = computed(() =>
+  mataKuliahList.find(
+    (course) =>
+      course.id === activeMataKuliah.value &&
+      course.semester === activeSemester.value,
+  ),
+);
 
 const setSemester = (semester) => {
   activeSemester.value = semester;

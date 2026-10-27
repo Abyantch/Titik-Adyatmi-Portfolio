@@ -246,8 +246,8 @@
 
 <script setup>
 import { ref } from "vue";
-import collagePhotoOne from "../assets/titik2.jpg";
-import collagePhotoTwo from "../assets/wisuda.png";
+import collagePhotoOne from "../assets/Seminar1.jpg";
+import collagePhotoTwo from "../assets/Seminar2.jpg";
 
 const activeSemester = ref("semester-1");
 
