@@ -207,22 +207,6 @@
                       />
                     </svg>
 
-                    <!-- Seminar 3 -->
-                    <svg
-                      v-else
-                      class="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 12h6M12 9v6"
-                      />
-                      <circle cx="12" cy="12" r="9" />
-                    </svg>
 
                   </span>
 
@@ -607,10 +591,6 @@ const seminarItems = [
   {
     name: "Artefak",
     to: "/seminar/artefak",
-  },
-  {
-    name: "Seminar 3",
-    to: "/seminar/3",
   },
 ];
 

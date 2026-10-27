@@ -114,9 +114,9 @@
         </button>
       </div>
 
-      <div v-if="activeSemester === 'semester-1'" class="mt-12 space-y-8">
+      <div v-if="activeDocuments.length" class="mt-12 space-y-8">
         <article
-          v-for="document in semesterOneDocuments"
+          v-for="document in activeDocuments"
           :key="document.file"
           class="group relative overflow-hidden rounded-[32px] border border-sky-200 bg-white/90 shadow-xl shadow-sky-500/10 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none dark:hover:border-sky-700"
         >
@@ -134,7 +134,7 @@
                 <span
                   class="inline-flex rounded-full bg-sky-500/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-300"
                 >
-                  Semester 1
+                  {{ activeSemesterLabel }}
                 </span>
 
                 <h3
@@ -231,13 +231,10 @@
           <i class="mdi mdi-file-document-outline text-4xl"></i>
         </div>
 
-        <h3 class="mt-5 text-xl font-black text-slate-900 dark:text-white">
-          Dokumen Semester 2 belum tersedia
-        </h3>
+        <h3 class="mt-5 text-xl font-black text-slate-900 dark:text-white">Dokumen belum tersedia</h3>
 
         <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
-          Dokumen refleksi Semester 2 akan ditampilkan di sini setelah file PDF
-          ditambahkan.
+          Dokumen refleksi untuk semester ini akan ditampilkan di sini setelah file PDF ditambahkan.
         </p>
       </div>
     </div>
@@ -245,7 +242,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import collagePhotoOne from "../assets/Seminar1.jpg";
 import collagePhotoTwo from "../assets/Seminar2.jpg";
 
@@ -318,6 +315,59 @@ const semesterOneDocuments = [
   },
 ];
 
+const semesterTwoDocuments = [
+  {
+    title: "Refleksi Mata Kuliah Pembelajaran Sosial Emosional",
+    tagline: "Understanding emotions to build meaningful relationships.",
+    reflection: [
+      "Mata kuliah ini mengajarkan saya bahwa keberhasilan belajar tidak hanya ditentukan oleh kemampuan akademik, tetapi juga oleh kondisi sosial dan emosional peserta didik. Saya belajar pentingnya empati, pengelolaan emosi, dan hubungan sosial yang positif.",
+      "Pengalaman ini menyadarkan saya untuk menciptakan pembelajaran yang aman, nyaman, dan inklusif agar peserta didik dapat berkembang secara akademik maupun sosial emosional.",
+    ],
+    file: "/pdf/REFLEKSI SEMESTER 2/REFLEKSI MK 2 PSE.pdf",
+    downloadName: "REFLEKSI MK 2 PSE.pdf",
+  },
+  {
+    title: "Refleksi Mata Kuliah Pembelajaran Mendalam dan Asesmen Lanjut",
+    tagline: "Designing adaptive and student-centered learning.",
+    reflection: [
+      "Mata kuliah ini membantu saya memahami pentingnya pembelajaran yang mindful, meaningful, dan joyful melalui pendekatan DUP yang berpusat pada peserta didik. Saya belajar menerapkan TaRL untuk menyesuaikan pembelajaran dengan kesiapan belajar serta CRT untuk mengaitkan materi dengan latar belakang budaya peserta didik.",
+      "Saya juga memahami bahwa asesmen tidak hanya digunakan untuk menilai hasil belajar, tetapi menjadi dasar dalam menentukan strategi pembelajaran yang adaptif. Pengalaman ini mendorong saya merancang pembelajaran yang lebih inklusif, kontekstual, dan sesuai dengan kebutuhan peserta didik.",
+    ],
+    file: "/pdf/REFLEKSI SEMESTER 2/REFLEKSI MK 2 PMAL.pdf",
+    downloadName: "REFLEKSI MK 2 PMAL.pdf",
+  },
+  {
+    title: "Refleksi Mata Kuliah Etnopedagogi untuk Pembelajaran Reflektif dan Adaptif",
+    tagline: "Connecting local wisdom with learning.",
+    reflection: [
+      "Mata kuliah ini mengajarkan saya untuk memanfaatkan budaya dan kearifan lokal sebagai sumber belajar yang kontekstual. Saya memahami bahwa lingkungan sekitar dapat membuat pembelajaran lebih dekat dengan pengalaman peserta didik.",
+      "Melalui integrasi budaya lokal, seperti makanan khas Banten, saya ingin menciptakan pembelajaran yang bermakna, menghargai keberagaman, dan sesuai dengan kebutuhan peserta didik.",
+    ],
+    file: "/pdf/REFLEKSI SEMESTER 2/REFLEKSI MK 2 ETNO.pdf",
+    downloadName: "REFLEKSI MK 2 ETNO.pdf",
+  },
+  {
+    title: "Refleksi Mata Kuliah Proyek Kepemimpinan",
+    tagline: "Becoming a teacher who creates positive change.",
+    reflection: [
+      "Mata kuliah ini mengajarkan saya untuk mengidentifikasi masalah, merancang proyek, membangun kolaborasi, serta mengevaluasi hasil kegiatan. Saya belajar bahwa guru juga berperan sebagai pemimpin dan agen perubahan di masyarakat.",
+      "Melalui proyek eksplorasi lingkungan dan literasi anak, saya memahami pentingnya kerja sama, adaptasi, dan keberlanjutan program. Pengalaman ini mendorong saya untuk menjadi guru yang mampu memberikan dampak positif bagi peserta didik dan masyarakat.",
+    ],
+    file: "/pdf/REFLEKSI SEMESTER 2/REFLEKSI MK 2 PROYEK KEPEMIMPINAN.pdf",
+    downloadName: "REFLEKSI MK 2 PROYEK KEPEMIMPINAN.pdf",
+  },
+];
+
+const activeDocuments = computed(() =>
+  activeSemester.value === "semester-1"
+    ? semesterOneDocuments
+    : semesterTwoDocuments,
+);
+
+const activeSemesterLabel = computed(() =>
+  activeSemester.value === "semester-1" ? "Semester 1" : "Semester 2",
+);
+
 const pdfUrl = (file) => encodeURI(file);
 </script>
 
@@ -352,4 +402,3 @@ const pdfUrl = (file) => encodeURI(file);
   animation: floatSlower 10s ease-in-out infinite;
 }
 </style>
-  
