@@ -51,20 +51,20 @@ const routes = [
   {
     path: '/ppl/semester-2/topik-3',
     name: 'ppl-semester-2-topik-3',
-    component: () => import('../views/PplSemesterTwoView.vue'),
-    props: { title: 'Topik 3' }
+    component: () => import('../views/Topik3.vue'),
+    props: { page: 'topik-3' }
   },
   {
     path: '/ppl/semester-2/uts',
     name: 'ppl-semester-2-uts',
-    component: () => import('../views/PplSemesterTwoView.vue'),
-    props: { title: 'UTS' }
+    component: () => import('../views/Topik3.vue'),
+    props: { page: 'uts' }
   },
   {
     path: '/ppl/semester-2/uas',
     name: 'ppl-semester-2-uas',
-    component: () => import('../views/PplSemesterTwoView.vue'),
-    props: { title: 'UAS' }
+    component: () => import('../views/Topik3.vue'),
+    props: { page: 'uas' }
   },
 
   // URL lama tetap berfungsi dan mengarah ke struktur PPL Semester 1.
