@@ -271,9 +271,12 @@
               @mouseleave="scheduleClose('ppl')"
             >
               <div class="space-y-1">
+                <p class="px-3 pb-1 pt-2 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">
+                  PPL Semester 1
+                </p>
 
                 <RouterLink
-                  v-for="(item, index) in pplItems"
+                  v-for="(item, index) in pplSemesterOneItems"
                   :key="item.name"
                   :to="item.to"
                   class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-500 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-sky-300"
@@ -405,6 +408,22 @@
 
                 </RouterLink>
 
+                <div class="mx-2 mt-3 border-t border-slate-200 pt-3 dark:border-slate-700">
+                  <p class="px-1 pb-1 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">PPL Semester 2</p>
+                  <RouterLink
+                    v-for="item in pplSemesterTwoItems"
+                    :key="item.name"
+                    :to="item.to"
+                    class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-500 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-sky-300"
+                    @click="closeMenus"
+                  >
+                    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-50 text-sky-500 transition-all duration-200 group-hover:scale-105 group-hover:bg-sky-100 dark:bg-sky-500/10 dark:text-sky-300">
+                      <i class="mdi mdi-notebook-outline text-base"></i>
+                    </span>
+                    {{ item.name }}
+                  </RouterLink>
+                </div>
+
               </div>
             </div>
           </Transition>
@@ -521,8 +540,12 @@
                   PPL
                 </p>
 
+                <p class="mx-2 px-4 pt-2 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">
+                  PPL Semester 1
+                </p>
+
                 <RouterLink
-                  v-for="item in pplItems"
+                  v-for="item in pplSemesterOneItems"
                   :key="item.name"
                   :to="item.to"
                   class="mx-2 flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-sky-500 dark:text-gray-300 dark:hover:bg-gray-700"
@@ -537,6 +560,20 @@
                   {{ item.name }}
 
                 </RouterLink>
+
+                <div class="mx-2 mt-3 border-t border-gray-200 pt-3 dark:border-gray-700">
+                  <p class="px-4 pb-2 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">PPL Semester 2</p>
+                  <RouterLink
+                    v-for="item in pplSemesterTwoItems"
+                    :key="item.name"
+                    :to="item.to"
+                    class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-500 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-sky-300"
+                    @click="closeMobileMenu"
+                  >
+                    <span class="text-sky-500 dark:text-sky-300">✦</span>
+                    {{ item.name }}
+                  </RouterLink>
+                </div>
 
               </div>
 
@@ -600,27 +637,33 @@ const seminarItems = [
    Route DIJAGA.
 ========================= */
 
-const pplItems = [
+const pplSemesterOneItems = [
   {
     name: "Artefak",
-    to: "/artefak",
+    to: "/ppl/semester-1/artefak",
   },
   {
     name: "Feedback",
-    to: "/feedback",
+    to: "/ppl/semester-1/feedback",
   },
   {
     name: "Model Guru",
-    to: "/modelguru",
+    to: "/ppl/semester-1/model-guru",
   },
   {
     name: "Refleksi",
-    to: "/refleksi",
+    to: "/ppl/semester-1/refleksi",
   },
   {
     name: "Filosofi Mengajar",
-    to: "/filosofimengajar",
+    to: "/ppl/semester-1/filosofi-mengajar",
   },
+];
+
+const pplSemesterTwoItems = [
+  { name: "Topik 3", to: "/ppl/semester-2/topik-3" },
+  { name: "UTS", to: "/ppl/semester-2/uts" },
+  { name: "UAS", to: "/ppl/semester-2/uas" },
 ];
 
 

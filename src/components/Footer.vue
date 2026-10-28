@@ -37,7 +37,7 @@
       ></div>
 
       <!-- Footer Content -->
-      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.8fr_1fr]">
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_1.35fr_1fr]">
         <!-- Profile -->
         <div>
           <div class="flex items-center gap-4">
@@ -82,26 +82,26 @@
 
         <!-- Navigation -->
         <div>
-          <h3 class="text-xl font-black text-slate-800 dark:text-white">
-            Navigasi Cepat
-          </h3>
+          <h3 class="text-xl font-black text-slate-800 dark:text-white">Navigasi Cepat</h3>
 
-          <ul class="mt-6 space-y-4">
-            <li v-for="menu in menus" :key="menu.to">
-              <RouterLink
-                :to="menu.to"
-                class="group flex items-center gap-3 text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-sky-500 dark:text-slate-400"
-              >
-                <span
-                  class="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500/10 text-sky-500 transition-all duration-300 group-hover:bg-sky-500 group-hover:text-white"
+          <div class="mt-6 grid gap-8 sm:grid-cols-2">
+          <div v-for="section in navigationSections" :key="section.title">
+            <h4 class="text-xs font-black uppercase tracking-[0.16em] text-sky-500">{{ section.title }}</h4>
+            <ul class="mt-3 space-y-3">
+              <li v-for="menu in section.items" :key="menu.to">
+                <RouterLink
+                  :to="menu.to"
+                  class="group flex items-center gap-3 text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-sky-500 dark:text-slate-400"
                 >
-                  <i class="mdi mdi-chevron-right"></i>
-                </span>
-
-                {{ menu.label }}
-              </RouterLink>
-            </li>
-          </ul>
+                  <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500/10 text-sky-500 transition-all duration-300 group-hover:bg-sky-500 group-hover:text-white">
+                    <i class="mdi mdi-chevron-right"></i>
+                  </span>
+                  {{ menu.label }}
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+          </div>
         </div>
 
         <!-- Campus -->
@@ -145,12 +145,24 @@
 </template>
 
 <script setup>
-const menus = [
-  { label: "Profil", to: "/" },
-  { label: "Artefak", to: "/artefak" },
-  { label: "Feedback", to: "/lampiran" },
-  { label: "Model Guru", to: "/modelguru" },
-  { label: "Refleksi", to: "/refleksi" },
-  { label: "Filosofi Mengajar", to: "/filosofimengajar" },
+const navigationSections = [
+  {
+    title: "PPL Semester 1",
+    items: [
+      { label: "Artefak", to: "/ppl/semester-1/artefak" },
+      { label: "Feedback", to: "/ppl/semester-1/feedback" },
+      { label: "Model Guru", to: "/ppl/semester-1/model-guru" },
+      { label: "Refleksi", to: "/ppl/semester-1/refleksi" },
+      { label: "Filosofi Mengajar", to: "/ppl/semester-1/filosofi-mengajar" },
+    ],
+  },
+  {
+    title: "PPL Semester 2",
+    items: [
+      { label: "Topik 3", to: "/ppl/semester-2/topik-3" },
+      { label: "UTS", to: "/ppl/semester-2/uts" },
+      { label: "UAS", to: "/ppl/semester-2/uas" },
+    ],
+  },
 ];
 </script>

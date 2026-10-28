@@ -24,30 +24,55 @@ const routes = [
   },
 
   {
-    path: '/artefak',
-    name: 'artefak',
+    path: '/ppl/semester-1/artefak',
+    name: 'ppl-semester-1-artefak',
     component: () => import('../views/ArtefakView.vue')
   },
   {
-    path: '/feedback',
-    name: 'feedback',
+    path: '/ppl/semester-1/feedback',
+    name: 'ppl-semester-1-feedback',
     component: () => import('../views/FeedbackView.vue')
   },
   {
-    path: '/modelguru',
-    name: 'modelguru',
+    path: '/ppl/semester-1/model-guru',
+    name: 'ppl-semester-1-model-guru',
     component: () => import('../views/ModelGuruView.vue')
   },
   {
-    path: '/refleksi',
-    name: 'refleksi',
+    path: '/ppl/semester-1/refleksi',
+    name: 'ppl-semester-1-refleksi',
     component: () => import('../views/RefleksiView.vue')
   },
   {
-    path: '/filosofimengajar',
-    name: 'filosofimengajar',
+    path: '/ppl/semester-1/filosofi-mengajar',
+    name: 'ppl-semester-1-filosofi-mengajar',
     component: () => import('../views/FilosofiMengajarView.vue')
-  }
+  },
+  {
+    path: '/ppl/semester-2/topik-3',
+    name: 'ppl-semester-2-topik-3',
+    component: () => import('../views/PplSemesterTwoView.vue'),
+    props: { title: 'Topik 3' }
+  },
+  {
+    path: '/ppl/semester-2/uts',
+    name: 'ppl-semester-2-uts',
+    component: () => import('../views/PplSemesterTwoView.vue'),
+    props: { title: 'UTS' }
+  },
+  {
+    path: '/ppl/semester-2/uas',
+    name: 'ppl-semester-2-uas',
+    component: () => import('../views/PplSemesterTwoView.vue'),
+    props: { title: 'UAS' }
+  },
+
+  // URL lama tetap berfungsi dan mengarah ke struktur PPL Semester 1.
+  { path: '/artefak', redirect: '/ppl/semester-1/artefak' },
+  { path: '/feedback', redirect: '/ppl/semester-1/feedback' },
+  { path: '/modelguru', redirect: '/ppl/semester-1/model-guru' },
+  { path: '/refleksi', redirect: '/ppl/semester-1/refleksi' },
+  { path: '/filosofimengajar', redirect: '/ppl/semester-1/filosofi-mengajar' },
 ]
 
 const router = createRouter({
