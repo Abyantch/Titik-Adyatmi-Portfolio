@@ -147,21 +147,36 @@
 <script setup>
 const navigationSections = [
   {
+    title: "Seminar",
+    items: [
+      { label: "Refleksi", to: "/seminar/refleksi" },
+      { label: "Artefak", to: "/seminar/artefak" },
+    ],
+  },
+  {
     title: "PPL Semester 1",
     items: [
       { label: "Artefak", to: "/ppl/semester-1/artefak" },
       { label: "Feedback", to: "/ppl/semester-1/feedback" },
       { label: "Model Guru", to: "/ppl/semester-1/model-guru" },
       { label: "Refleksi", to: "/ppl/semester-1/refleksi" },
-      { label: "Filosofi Mengajar", to: "/ppl/semester-1/filosofi-mengajar" },
+      {
+        label: "Filosofi Mengajar",
+        to: "/ppl/semester-1/filosofi-mengajar",
+      },
     ],
   },
   {
     title: "PPL Semester 2",
     items: [
-      { label: "Topik 3", to: "/ppl/semester-2/topik-3" },
-      { label: "UTS", to: "/ppl/semester-2/uts" },
-      { label: "UAS", to: "/ppl/semester-2/uas" },
+      {
+        label: "Praktik Terbimbing",
+        to: "/ppl/semester-2/praktik-terbimbing",
+      },
+      {
+        label: "Praktik Mandiri",
+        to: "/ppl/semester-2/praktik-mandiri",
+      },
     ],
   },
 ];

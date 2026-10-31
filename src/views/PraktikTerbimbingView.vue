@@ -367,7 +367,7 @@ const scrollToSection = (id) => {
 
     <h1
 
-      class="mt-7 text-5xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-6xl xl:text-7xl dark:text-white"
+      class="mt-7 text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl xl:text-6xl dark:text-white"
 
     >
 
@@ -379,7 +379,7 @@ const scrollToSection = (id) => {
 
       >
 
-        Refleksi & Praktik
+        Praktik Terbimbing
 
       </span>
 
@@ -533,7 +533,7 @@ const scrollToSection = (id) => {
 
         <img
 
-          src="/pdf/TOPIK 3/KEGIATAN NON MENGAJAR/Kegiatan Pagi Hari.jpeg"
+          src="/pdf/TOPIK 3/KEGIATAN NON MENGAJAR/Hero Topik 3.jpeg"
 
           alt="Lingkungan SMP Negeri 2 Kota Serang"
 

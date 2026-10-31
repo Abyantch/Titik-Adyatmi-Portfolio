@@ -12,6 +12,7 @@
     "@babel/parser": "^7.24.8",
     "@headlessui/vue": "^1.7.22",
     "@heroicons/vue": "^2.1.5",
+    "@mdi/font": "^7.4.47",
     "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
     "vue": "^3.4.21",

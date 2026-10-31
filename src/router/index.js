@@ -49,22 +49,16 @@ const routes = [
     component: () => import('../views/FilosofiMengajarView.vue')
   },
   {
-    path: '/ppl/semester-2/topik-3',
-    name: 'ppl-semester-2-topik-3',
-    component: () => import('../views/Topik3.vue'),
-    props: { page: 'topik-3' }
+    path: '/ppl/semester-2/praktik-terbimbing',
+    name: 'ppl-semester-2-praktik-terbimbing',
+    component: () => import('../views/PraktikTerbimbingView.vue'),
+    props: { page: 'praktik-terbimbing' }
   },
   {
-    path: '/ppl/semester-2/uts',
-    name: 'ppl-semester-2-uts',
-    component: () => import('../views/Topik3.vue'),
-    props: { page: 'uts' }
-  },
-  {
-    path: '/ppl/semester-2/uas',
-    name: 'ppl-semester-2-uas',
-    component: () => import('../views/Topik3.vue'),
-    props: { page: 'uas' }
+    path: '/ppl/semester-2/praktik-mandiri',
+    name: 'ppl-semester-2-praktik-mandiri',
+    component: () => import('../views/PraktikMandiriView.vue'),
+    props: { page: 'praktik-mandiri' }
   },
 
   // URL lama tetap berfungsi dan mengarah ke struktur PPL Semester 1.

@@ -661,9 +661,9 @@ const pplSemesterOneItems = [
 ];
 
 const pplSemesterTwoItems = [
-  { name: "Topik 3", to: "/ppl/semester-2/topik-3" },
-  { name: "UTS", to: "/ppl/semester-2/uts" },
-  { name: "UAS", to: "/ppl/semester-2/uas" },
+  { name: "Praktik Terbimbing", to: "/ppl/semester-2/praktik-terbimbing" },
+  { name: "Praktik Mandiri", to: "/ppl/semester-2/praktik-mandiri" },
+
 ];
 
 
