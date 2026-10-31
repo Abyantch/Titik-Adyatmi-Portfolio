@@ -211,7 +211,7 @@ const pages = {
 
         ],
 
-        url: "",
+        url: "https://drive.google.com/drive/folders/1PSAxL4wZZ0Ai3S0mGS73bTEAz7MrMo44?usp=sharing",
 
       },
 
@@ -245,7 +245,7 @@ const pages = {
 
         description:
 
-          "Dokumentasi penilaian praktik terbimbing dari Dosen Pembimbing Lapangan (DPL) dan Guru Pamong pada tiga siklus.",
+          "Dokumentasi penilaian praktik terbimbing dirangkum dalam satu dokumen Lampiran 7 dan 8.",
 
         summary:
 
@@ -263,104 +263,11 @@ const pages = {
 
           "Penilaian dari Guru Pamong memberikan pemahaman bahwa praktik pembelajaran yang baik tidak hanya ditentukan oleh hasil akhir, tetapi juga oleh kemampuan guru untuk terus mengevaluasi dan memperbaiki setiap proses pembelajaran.",
 
-        evaluations: [
-          {
-            evaluator: "Dosen Pembimbing Lapangan",
-            cycle: "Siklus 1",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 1/Dpl 1 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 1/Dpl 1 L 8.pdf",
-              },
-            ],
-          },
-          {
-            evaluator: "Guru Pamong",
-            cycle: "Siklus 1",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 1/GP 1 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 1/GP 1 L 8.pdf",
-              },
-            ],
-          },
-          {
-            evaluator: "Dosen Pembimbing Lapangan",
-            cycle: "Siklus 2",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 2/Dpl 2 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 2/Dpl 2 L 8.pdf",
-              },
-            ],
-          },
-          {
-            evaluator: "Guru Pamong",
-            cycle: "Siklus 2",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 2/GP 2 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 2/GP 2 L 8.pdf",
-              },
-            ],
-          },
-          {
-            evaluator: "Dosen Pembimbing Lapangan",
-            cycle: "Siklus 3",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 3/Dpl 3 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN DPL",
-                url: "/pdf/LAMPIRAN 7&8/DPL/Siklus 3/Dpl 3 L 8.pdf",
-              },
-            ],
-          },
-          {
-            evaluator: "Guru Pamong",
-            cycle: "Siklus 3",
-            documents: [
-              {
-                title: "Lampiran 7",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 3/GP 3 L 7.pdf",
-              },
-              {
-                title: "Lampiran 8",
-                category: "PENILAIAN GURU PAMONG",
-                url: "/pdf/LAMPIRAN 7&8/Guru pamong/Siklus 3/GP 3 L 8.pdf",
-              },
-            ],
-          },
-        ],
+        document: {
+          title: "Lampiran 7 & 8 Terbimbing",
+          category: "DOKUMENTASI PENILAIAN",
+          url: "/pdf/LAMPIRAN 7&8/Lampiran 7 & 8 Terbimbing.pdf",
+        },
 
       },
 
@@ -1791,89 +1698,67 @@ const scrollToSection = (id) => {
               <div class="relative z-10 mt-8">
                 <div class="mb-5 flex items-center gap-3">
                   <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500/10 to-violet-500/10 text-sky-500">
-                    <i class="mdi mdi-file-multiple-outline text-2xl"></i>
+                    <i class="mdi mdi-file-pdf-box text-2xl"></i>
                   </div>
                   <div>
                     <h3 class="font-black text-slate-900 dark:text-white">
                       Dokumen Penilaian
                     </h3>
                     <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      Lampiran 7 dan 8 · DPL dan Guru Pamong · 3 siklus
+                      Lampiran 7 dan 8 dalam satu dokumen
                     </p>
                   </div>
                 </div>
-                <div class="grid items-start gap-5 md:grid-cols-2">
-                <article
-                  v-for="evaluation in section.evaluations"
-                  :key="`${evaluation.evaluator}-${evaluation.cycle}`"
-                  class="rounded-[28px] border border-slate-200 bg-white/60 p-4 dark:border-slate-700 dark:bg-slate-800/40 sm:p-5"
-                >
-                  <div class="mb-4 flex items-start justify-between gap-3">
-                    <div>
-                      <p class="text-[10px] font-black uppercase tracking-[0.18em] text-sky-500">
-                        {{ evaluation.cycle }}
-                      </p>
-                      <h3 class="mt-1 font-black text-slate-900 dark:text-white">
-                        {{ evaluation.evaluator }}
-                      </h3>
+                <div class="grid items-start gap-5">
+                  <article
+                    class="shine-card group relative overflow-hidden rounded-[28px] border border-white/70 bg-white/80 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-none sm:p-5"
+                  >
+                    <div class="mb-4 flex items-center gap-3">
+                      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/20 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                        <i class="mdi mdi-file-document-outline text-2xl"></i>
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-[10px] font-black uppercase tracking-[0.18em] text-sky-500">
+                          {{ section.document.category }}
+                        </p>
+                        <h4 class="mt-1 font-black text-slate-900 dark:text-white">
+                          {{ section.document.title }}
+                        </h4>
+                      </div>
+                      <span class="rounded-lg border border-violet-200 bg-violet-50 px-2 py-1 text-[10px] font-black text-violet-600 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300">
+                        PDF
+                      </span>
                     </div>
-                    <i class="mdi mdi-account-check-outline text-2xl text-violet-500"></i>
-                  </div>
 
-                  <div class="grid gap-5">
-                    <div
-                      v-for="doc in evaluation.documents"
-                      :key="doc.url"
-                      class="shine-card group relative overflow-hidden rounded-[28px] border border-white/70 bg-white/80 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-sky-300 hover:shadow-sky-500/20 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-none sm:p-5"
-                    >
-                      <div class="mb-4 flex items-center gap-3">
-                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/20 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                          <i class="mdi mdi-file-document-outline text-2xl"></i>
-                        </div>
-                        <div class="min-w-0 flex-1">
-                          <p class="text-[10px] font-black uppercase tracking-[0.18em] text-sky-500">
-                            {{ doc.category }}
-                          </p>
-                          <h4 class="mt-1 font-black text-slate-900 dark:text-white">
-                            {{ doc.title }} · {{ evaluation.cycle }}
-                          </h4>
-                        </div>
-                        <span class="rounded-lg border border-violet-200 bg-violet-50 px-2 py-1 text-[10px] font-black text-violet-600 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300">
-                          PDF
-                        </span>
-                      </div>
-
-                      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                        <iframe
-                          :key="doc.url"
-                          :src="`${toFileUrl(doc.url)}#toolbar=0&navpanes=0`"
-                          :title="`Preview ${doc.title} · ${evaluation.cycle} · ${evaluation.evaluator}`"
-                          class="h-[230px] w-full bg-white"
-                          loading="lazy"
-                        ></iframe>
-                      </div>
-
-                      <div class="mt-4 grid grid-cols-2 gap-2">
-                        <button
-                          type="button"
-                          @click="openPdf(doc)"
-                          class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 text-xs font-bold text-slate-700 transition-all duration-300 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-sky-500 dark:hover:bg-slate-700"
-                        >
-                          <i class="mdi mdi-fullscreen text-lg"></i>
-                          Fullscreen
-                        </button>
-                        <a
-                          :href="toFileUrl(doc.url)"
-                          :download="doc.url.split('/').pop()"
-                          class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-violet-500 px-3 py-3 text-xs font-bold text-white shadow-lg shadow-sky-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-violet-500/25"
-                        >
-                          <i class="mdi mdi-download text-lg"></i>
-                          Download PDF
-                        </a>
-                      </div>
+                    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+                      <iframe
+                        :key="section.document.url"
+                        :src="`${toFileUrl(section.document.url)}#toolbar=0&navpanes=0`"
+                        :title="`Preview ${section.document.title}`"
+                        class="h-[230px] w-full bg-white"
+                        loading="lazy"
+                      ></iframe>
                     </div>
-                  </div>
-                </article>
+
+                    <div class="mt-4 grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        @click="openPdf(section.document)"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 text-xs font-bold text-slate-700 transition-all duration-300 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-sky-500 dark:hover:bg-slate-700"
+                      >
+                        <i class="mdi mdi-fullscreen text-lg"></i>
+                        Fullscreen
+                      </button>
+                      <a
+                        :href="toFileUrl(section.document.url)"
+                        :download="section.document.url.split('/').pop()"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-violet-500 px-3 py-3 text-xs font-bold text-white shadow-lg shadow-sky-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-violet-500/25"
+                      >
+                        <i class="mdi mdi-download text-lg"></i>
+                        Download PDF
+                      </a>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
@@ -1884,57 +1769,6 @@ const scrollToSection = (id) => {
 
       </div>
 
-      <!-- FOOTER -->
-
-      <footer class="mt-24 border-t border-slate-200 pt-8 dark:border-slate-800">
-
-        <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-
-          <div class="flex items-center gap-3">
-
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/20">
-
-              <i class="mdi mdi-school-outline text-xl"></i>
-
-            </div>
-
-            <div>
-
-              <p class="text-sm font-black text-slate-900 dark:text-white">
-
-                Refleksi Praktik Pengalaman Lapangan
-
-              </p>
-
-              <p class="mt-1 text-xs text-slate-500">
-
-                Topik 3 · SMP Negeri 2 Kota Serang
-
-              </p>
-
-            </div>
-
-          </div>
-
-          <button
-
-            type="button"
-
-            @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
-
-            class="group inline-flex items-center gap-2 self-start rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-bold text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:text-sky-500 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-300"
-
-          >
-
-            Kembali ke atas
-
-            <i class="mdi mdi-arrow-up transition-transform duration-300 group-hover:-translate-y-1"></i>
-
-          </button>
-
-        </div>
-
-      </footer>
 
     </div>
 

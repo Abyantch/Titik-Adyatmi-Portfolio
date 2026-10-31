@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
 
+const heroImage = "/public/pdf/PRAKTIK MANDIRI/Right Hero.jpeg";
+
 const props = defineProps({
   page: {
     type: String,
@@ -112,7 +114,7 @@ const cycles = [
 
         "Mystery Box, gambar, dan LKM Jelajah Pos mendukung eksplorasi konkret. Guru mengarahkan dan menguatkan konsep melalui pertanyaan pemantik, eksplorasi, serta diskusi.",
       ],
-      url: "",
+      url: "https://drive.google.com/drive/folders/1VRc4DSrR7a2DPD-BIYM4Uq8n9rk4lPvu?usp=sharing",
     },
   },
 
@@ -178,7 +180,7 @@ const cycles = [
 
         "LKM, gambar, dan bahan tayang membantu analisis homeostasis. Post-test tetap perlu dijaga fungsinya sebagai alat ukur pemahaman sekaligus evaluasi belajar.",
       ],
-      url: "",
+      url: "https://drive.google.com/drive/folders/1iBHNxDQcJSFHZNe5om96NF_4nQjkm5Ah?usp=sharing",
     },
   },
 
@@ -246,7 +248,7 @@ const cycles = [
 
         "PPT, gambar makanan khas Banten, dan LKM membantu peserta didik mengaitkan pengalaman nyata dengan konsep zat aditif.",
       ],
-      url: "",
+      url: "https://drive.google.com/drive/folders/1zS0ems_iSKMuvRu6kJ197M18qkQgwyrf?usp=sharing",
     },
   },
 
@@ -257,7 +259,7 @@ const cycles = [
     source: "UAS",
     subject: "Sistem Reproduksi Manusia",
     shortDescription:
-      "Pembelajaran diferensiatif melalui TaRL dan eksplorasi konsep menggunakan media Augmented Reality.",
+      "Pembelajaran diferensiasi melalui TaRL dan eksplorasi konsep menggunakan media Augmented Reality.",
 
     planning: {
       title: "Produk Perencanaan Pembelajaran",
@@ -314,7 +316,7 @@ const cycles = [
 
         "Melalui TaRL, peserta didik mengerjakan LKM sesuai kebutuhan, menganalisis struktur dan fungsi organ, lalu mempresentasikan hasil diskusi. Pemerataan partisipasi kelompok tetap perlu diperhatikan.",
       ],
-      url: "",
+      url: "https://drive.google.com/drive/folders/1EMyEeFWP_q7kbTkL0w4IPNpwrQmpv5lW?usp=sharing",
     },
   },
 ];
